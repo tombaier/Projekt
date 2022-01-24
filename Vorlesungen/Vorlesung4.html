@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Vorlesung 4</title>
+    <link rel="stylesheet" href="../mystyle.css">
+  </head>
+
+
+  <body>
+    <div class="Kopfzeile">
+      <h2>Vorlesung 4 - 15.11.2021</h2>
+      <a href="../index.html"><button class="HomeButton">Zurück zur Startseite</button></a>
+    </div>
+
+
+
+    <div class="Inhalt">
+
+      <h3>Stylen mit Hilfe von CSS</h3>
+      <p class="blocksatz"><b>CSS</b> ist sehr mächtig, wenn es um das Designen von Webanwendungen geht. Somit möchte das Designen einer Webanwendung mittels <b>CSS</b> anhand dieser Seite näher beschreiben. In der 2. Vorlesung haben wir uns bereits damit beschäftigt wie externe <em>CSS</em>-Dateien in ein HTML-Dokument eingebunden werden können. Schauen wir uns nun den folgenden Code an:</p>
+
+      <p>
+        <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/css-style.png" alt="CSS Style">
+      </p>
+
+      <p class="blocksatz"> Wie der Code zeigt gibt es verschiedene Möglichkeiten, wie eine Art Gruppe gebildet werden kann, auf die der Style zutreffen soll. Das erste Beispiel ist dass man mit CSS direkte Tags ansprechen kann. Somit wird in unserem beispiel festgelegt, dass für <em>html</em>, also für die gesamte Seite, das smoothe scrolling aktiviert werden soll. Ab Zeile 8 hingegegen wird durch <em>.Fusszeile</em> eine Klasse erstellt, die unter anderem die Textfarbe schwarz und die Hintergrund Farbe weiss haben soll. Somit kann dieser definierte Style gezielt eingesetzt werden. Dcoh wie funktioniert das? Anhand des <em>.Fusszeile</em>-Beispiel funktioniert es indem man einem <em>div</em>-Tag <em>class="Fusszeile"</em> mitgibt. Somit folgt alles was innerhalb des <em>div</em>-Tags steht den definierten Anforderungen für <em>.Fusszeile</em>, außer innerhalb des Tags wird nochmal ausdrücklich für bestimmte Stellen etwas anderes definiert. Falls dies der Fall ist folgen diese Stellen dann primär den individuellen Angaben und sekundär den Angaben die in <em>.fusszeile</em> definiert wurden.</p>
+
+      <form id="waehrungsrechner" name="waehrungsrechner">
+        <h3>Übung: Währungsumrechner</h3>
+        <label id="eingabe">
+            Eingabe
+            <input type="text" name="eingabe" value="1">
+        </label>
+        <br>
+        <label id="umrechenAuswahl">
+            <label>
+                <input type="radio" name="umrechenAuswahl" checked>
+                EUR nach USD
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="umrechenAuswahl">
+                USD nach EUR
+                </label>
+        </label>
+        <br>
+        <input id="umrechnenButton" type="button" value="Umrechnen" onclick="umrechnen()">
+        <h3 id="ausgabe"></h3>
+    </form>
+
+    <script>
+        function umrechnen(){
+    var umrechenfaktor = 0.0;
+    var von = "";
+    var zu = "";
+    var eingangsWert = parseFloat(document.waehrungsrechner.eingabe.value.replace(",","."));
+    var ausgangsWert = 0.0;
+
+    // Wenn EUR -> USD ausgewählt
+    if (document.waehrungsrechner.umrechenAuswahl[0].checked) {
+        umrechenfaktor = 1.15;
+        von = "Euro";
+        zu = "USD";
+    // Wenn USD -> EUR ausgewählt
+    } else if (document.waehrungsrechner.umrechenAuswahl[1].checked){
+        umrechenfaktor = 0.87;
+        von = "USD";
+        zu = "Euro";
+    }
+    ausgangsWert = eingangsWert * umrechenfaktor;
+
+    document.getElementById('ausgabe').innerHTML = eingangsWert.toFixed(2).replace(".",",") + " " + von + " entsprechen " + ausgangsWert.toFixed(2).replace(".",",") + " " + zu;
+    }                   
+    </script>
+    </div>
+  </body>
+</html>

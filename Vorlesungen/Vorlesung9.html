@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Vertiefungsthema</title>
+    <link rel="stylesheet" href="../mystyle.css">
+  </head>
+
+  <body>
+    <div class="Kopfzeile">
+      <h2>Vertiefungsthema - PHP</h2>
+      <a href="../index.html"><button class="HomeButton">Zurück zur Startseite</button></a>
+    </div>
+
+    <div class="Inhalt">
+
+      <h3>Wahl des Vertiefungsthemas</h3>
+      <p class="blocksatz"> Das Thema oder zumindest der Begriff <b>PHP</b> sollte jedem, der sich ein wenig mit Webentwicklung auseinander gesetzt hat, bekannt sein. Dies ist auch bei mir der Fall. Vorallem  die kurze Einführung zum Thema PHP in unserer letzten Vorlesung, machte PHP noch interessanter für mich, weshalb ich PHP als Vertiefungsthema der Vorlesung Webprogrammierung im dritten Semster behandeln möchte. </p>
+
+      <h3>Einführung in PHP</h3>
+      <p class="blocksatz"> <b>PHP</b> ist ein rekursives Akronym für <b>Hypertext Preprocessor</b>. PHP beschäftigt sich mit der Seite des Servers und nimmt somit Anfragen, die clientseitig gestellt werden an, verabeitet diese und gibt eine Antwort zurück.</p>
+
+      <h3>Ein erstes Beispiel zum Einfügen von PHP Code in HTML</h3>
+      <p>
+        <img class="screenshot" src="../Abbildungen/inititalphp.png" alt="PHP in HTML einfügen">
+      </p>
+
+      <p class="blocksatz">Wie sich in dem oberen Beispiel erkennen lässt, wird das öffnende PHP Tag noch in rot dargestellt. Dieses Problem ergibt sich, da bevor PHP genutzt werden kann, einige Vorkehrungen getroffen werden müssen. In den folgenden Abschnitten werde ich Ihnen erklären, was Sie für PHP benötigen und wie Sie PHP anschließend nutzen können. </p>
+
+      <h3>Installation und Konfiguration</h3>
+      <p class="blocksatz">Vorab ist hierbei anzumerken, dass ich privat das Betriebssystem <b>MacOS</b> nutze und ich deshalb auch die Installation und Konfiguration anhand dieses Betriebsystems erkläre. Falls Sie jedoch ein anderes Betriebssystem nutzen, können Sie sich auf <a href="https://www.php.net/manual/de/install.php"> dieser Seite</a> umschauen. Dort wird die Installation und Konfiguration für andere Betriebssysteme beschrieben.</p>
+
+      <p class="blocksatz">Für die Installation benötigen wir folgendes: </p>
+        <ul>
+          <li>Apache</li>
+          <li>MySQL</li>
+          <li>PHP</li>
+        </ul>
+      <p class="blocksatz">Dabei ist <b>MySQL nicht nötig</b> zur Verwendung von PHP, sondern eher optional. In dieser PHP Einführung werden wird deshalb auch nicht weiter auf MySQL eingehen. In der Praxis von großen Webanwednungen hingegen spielt eine Datenbank eine größere Rolle.
+        <br>
+        Apache ist ein lokaler Webserver, den wir zur Ausführung unseres PHP Codes benötigen. Zudem benötigen wir PHP um damit arbeiten zu können. 
+        <br>
+        Ich habe  mich hierbei für einen einfachen Installationsvorgang entschieden und zwar für den Donwload über <a href="https://www.apachefriends.org/de/download.html"> ApacheFriens</a>, den Sie uns auch in der Vorlesung emfohlen haben.
+        <br>
+        Nachdem Download und der Installation der MAMP Software, öffnet sich nun das ein Hinweisfenster, das darauf aufmerksam macht, dass es sich um den ersten Start handelt und das Programm initialisiert werden muss. Nachdem der Vorgang abgesschlossen ist öffnet sich dann das User Interface (UI) von XAMPP:
+        <br>
+        <br>
+        <img class="screenshot" src="../Abbildungen/ui-xampp.png" alt="Control in XAMPP">
+        <br>
+        <br>
+        Hierbei sieht man dann zunächst den Status. Sthet dieser auf rot, so wird aktuell nichts ausgeführt. Der Server kann dann über den <em>Start</em>-Button gestartet werden. Der Status sollte sich dann auf gelb ändern, was bedeutet, dass der Server gestartet wird. Nach wenigen Sekunden sollte der Status dann grün sein was bedeutet, dass der Server einsatzbereit ist. Über die Menüleiste, wie im obigen Bild zu sehen, kann man dann auf den Punkt <em>Services</em> zugreifen. Dort den <b>Apache</b> auswählen und diesen ebenfalls starten. Nun ist unser lokaler Webserver bereit den PHP-Code auszuführen.
+      </p>
+
+      <h4>htdocs-Folder</h4>
+      <p class="blocksatz">Um nun fortzufahren, öffnen wir den <em>htdocs</em>-Folder den die Installation von XAMPP mit sich bringt. Dort müssen die <em>.php</em>-Dokumente gespeichert werden, die wir mit dem lokalen Webserver ausführen möchten. Falls man diesen Folder nicht finden sollt gibt es dazu einen "Workaround", der so funktioniert: Über den Menüpunkt <em>Volumes</em> klickt man auf <em>mount</em> und danach auf <em>explore</em>. Somit gelangt man zu dem ordner <em>lampp</em>, der die <em>htdocs</em>-Folder enthält. Darüber kann man den Ordner öffnen und die PHP-Dateien einügen oder anlegen.</p>
+
+      <h3>Ein einfaches LogIn-Formular</h3>
+      <p class="blocksatz">Wie wir bereits in den Vorleungen erfahren haben, eignet sich PHP sehr gut zum Erzeugen der Interaktivität zwischen Client und Server. Im folgenden habe ich ein kleines Login Formular erstellt, das die getätigte Eingabe des Nutzers überprüft und dementsprechend reagiert.</p>
+
+      <p>
+        <img class="screenshot" src="../Abbildungen/loginhtml.png" alt="Übung UI">
+      </p>
+
+      <p class="blocksatz">Der Code verteilt sich auf vier Dokumente: <em>login.html</em>, <em>login.php</em>, <em>privat.php</em> und <em>logout.php</em>. Die Codes der jeweiligen Datein sehen wie folgt aus:</p>
+
+      <h4>login.html</h4>
+      <p>
+        <img class="screenshot" src="../Abbildungen/loginhtml.png" alt="Übung Code">
+      </p>
+
+      <p class="blocksatz">Die <em>login.html</em> Datei definiert wie das login Formular aussehen soll und verweist innerhalb des <em>form</em>-Tags auf die Datei <em>login.php</em>. </p>
+
+      <h4>login.php</h4>
+      <p>
+        <img class="screenshot" src="../Abbildungen/loginphp.png" alt="Übung Code">
+      </p>
+
+      <p class="blocksatz">Die PHP-Datei prüft, in der ersten inneren <em>if-Schleife</em>, ob Daten eingegeben wurden. Falls nicht wird eine Fehlermeldung mittels <em>echo</em> ausgegeben. Falls ja, dann wird nach in der else Bedingung geprüft ob die Eingabe richtig oder falsch war. Falls beide Eingaben korrekt sind, dann wird der Benutzer in einer <em>SESSSION</em>-Variable gespeichert und dann über den <em>header</em> und das <em>exit</em> zur <em>privat.php</em>-Seite weitergeleitet.</p>
+
+      <h4>privat.php</h4>
+      <p>
+        <img class="screenshot" src="../Abbildungen/privatphp.png" alt="Übung Code">
+      </p>
+
+      <p class="blocksatz">Auf dieser Seite wird nun geprüft ob der Nutzer angemeldet ist. Dazu betrachtet man die <em>SESSSION</em>-Variable (Zeile 14). Da dort zuvor der Benutzername gespeichert wurde, müsste man einen Benutzernamen zurückerhalten. Die Variable <em>§benutzername</em> erhält somit die Informationen der Session, in der der Benutzername gespeichert ist. Die <em>else</em>-Bedingung in Zeile 19 formuliert dabei, dass für den Fall eines nicht angemeldeten Nutzers, die Variable <em>§benutzername</em> leer bleibt. Die Ausgabe findet dann in Zeile 23 statt. Dabei wandelt<em>htmlspecialchars()</em> die für HTML spezifischen Zeichen um.</p>
+
+      <h4>logout.php</h4>
+      <p>
+        <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/logoutphp.png" alt="Übung Code">
+      </p>
+
+      <p class="blocksatz"> Die Logout-Datei übernimmt hierbei nur Funtkionen. Sie entfernt den Nutzer aus der Session und leitet ihn zu der Login Seite weiter. Zeile 4 geht dabei davon aus, dass in der <em>Session</em> der Benutzername steht. Über das Schlüsselwort <em>unset</em> wird der Benutzername gelöscht. Die zwei drauffolgenden Zeilen leiten den Nutzer dann zur Login-Seite zurück.</p>
+
+      <h4>Ausführung des Codes</h4>
+      <p class="blocksatz"> Zum Ausführen der Datei wird nun XAMPP benötigt, das wir vorhin gestartet haben. Über den Menüpunkt <em>Go to application</em> öffnet sich eine Seite im Browser. Um unsere geschriebene Anwendung nun auszuführen ersetzt man alles was nach dem <em>/</em> folgt durch <em>privat.php</em>. Dadurch öffnet sich die <em>privat.php</em>-Datei.</p>
+
+      <p>
+        <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/startanwendung.png" alt="Übung starten">
+      </p>
+
+      <p class="blocksatz"> Wie der Screenshot zeigt muss man sich anmelden um die Seite nutzen zu können. Zum LogIn führt der Link <em>Zur Anmeldung</em>. Diese Seite sieht dann wie folgt aus: </p>
+
+      <p>
+        <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/loginseite.png" alt="Übung LogIn">
+      </p>
+
+      <p class="blocksatz"> Nach dem der Nutzer sich dann mit seinen Anmeldedaten auf der Seite angemeldet hat, kann via <em>submit</em> den geschützen Bereich betreten, <b>vorausgesetzt</b> seine Angaben sind korrekt, dies wird mittels des geschriebenen PHP-Codes geprüft. Ist dies nicht der Fall tritt die folgende Fehlermeldung, wenn die Felder nicht ausgefüllt sind:</p>
+
+      <p>
+        <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/beidefelder.png" alt="Fehlermeldung">
+      </p>
+
+      <p class="blocksatz">Wenn die Anmeldung jedoch fehlerhaft ist, erscheint der Hinweis: <em>Überprüfen Sie Ihre Eingaben</em>.</p>
+
+      <p class="blocksatz">Zusammenfassend soll dieses Beispiel verdeutlichen für was PHP eingesetzt werden kann. LogIn Formulare benötigt man heutzutage überall... Als Erweiterung könnte man nun eine Datenbank, zum Beispiel MySQL, verknüpfen die verschiedene User auf die Seite zugreifen lässt und ein Register-Formular für neue Nutzer erstellen. </p>
+      
+
+      <p>
+        Zur Erstellung des Vertiefungsthema habe ich mich auf <a href="https://www.digbizmistelbach.at/superclass/pdfs/phpmyadmin/5_login.pdf"> diese Übung</a> bezogen.
+      </p>
+    </div>
+  </body>
+</html>

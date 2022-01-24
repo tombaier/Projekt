@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Vorlesung 6</title>
+    <link rel="stylesheet" href="../mystyle.css">
+  </head>
+
+  <body>
+    <div class="Kopfzeile">
+      <h2>Vorlesung 6 - 29.11.2021</h2>
+      <a href="../index.html"><button class="HomeButton">Zurück zur Startseite</button></a>
+    </div>
+
+    <div class="Inhalt">
+      <h3>Document Object Model (DOM)</h3>
+      <p class="blocksatz">In Vorlesung 2 haben wir bereits die Grundzuüge des DOMs besprochen. Nun beschäftigen wir uns weiter mit der Manipulation von Objekten mittels JavaScript. Um ein Objekt manipulieren zu können muss dieses erstmal erkannt werden. Daraufhin muss festgelegt werden, was mit dem Objekt geschehen soll. DOM ist dabei eine Art Verbindung zwischen JavaScript und HTML, die es JavaScript ermöglicht HTML-Elemente zu finden. Wie in Vorlesung 2 erklärt, kann ein Element dabei durch die Funktion <em>getElementById()</em> gefunden werden. Daraufhin kann das Objekt manipuliert werden, zum Beispiel können Eigenschaften eines Elementes verändert werden.</p>
+
+      <h4>Beispiel aus eigner Praxiserfahrung / Relevanz des DOMs</h4>
+      <p class="blocksatz">Währen meiner ersten Praxisphase drufte ich eine App für Demezkranke innerhalb meines Unternehmens programmieren. Dabei machte ich häufig von der Funktion <em>getElementById()</em> gebrauch. Dabei spielen auch Events eine Rolle. Die App zielt darauf ab Menschen durch Bilder "verlorene" Wörter neu beizubringen. Dabei wird das identische Layout verwendet, um die verschiedenen Bilder einzublenden. Somit soll nur das Bild geupdatet werden. Die Javascript-Funktion <em>getElementById()</em> wurde dabei verwendet um die HTML-Elemente "Weiter-Button" und "Bild" zu finden. Nur so ist es dann möglich durch das Klicken auf den "Weiter-Button" das Element "Bild" zu aktualisieren / manipulieren und ein neues Bild anzeigen zu lassen. </p>
+
+      <h3>Library, API and Framework</h3>
+      <p class="blocksatz">Programmierer möchten so wenig neuen Code wie möglich schreiben. Vorallem wenn es um immer wiederkehrend benötigte Funktionen gibt, ist es lästig den selben Code immer und immer wieder schreiben zu müssen. Heutzutage gibt es für dieses Problem verschiedene Lösungen: Zum Beispiel Libraries, APIs und Frameworks. Im folgenden werden diese drei Begriffe differenztiert, um unter anderem das Verständnis für jQuery zu schärfen:</p>
+
+      <h4>Library</h4>
+      <p class="blocksatz">Eine <b>Library</b>, in deutsch Bibliothek, ist eine Sammlung von Funktionen und Klassen. </p>
+
+      <h4>API</h4>
+      <p class="blocksatz">Eine <b>API</b> (application programming interface) hingegen ist eine Schnittstelle, die den Zugriff auf die Funktionen ermöglicht.</p>
+
+      <h4>Framework</h4>
+      <p class="blocksatz">Ein <b>Framework</b> ist eine spezielle Form einer Bibliothek, die sich heute etabliert und durchgesetzt hat. Ein Framework ist dabei kein fertiges Programm, sondern muss an vorgesehenen Stellen ergänzt werden. Es bildet somit den Rahmen der dann mit individuellem Code gefüllt werden kann. </p>
+
+      <h4>Library vs. Framework</h4>
+      <p class="blocksatz"> Eine Library stellt Funktionen bereit, die man dann innerhalb seines Codes aufrufen kann. Eine Funktion einer Bibliothek ist also eine Art Werkzeug, das man kontrollieren kann. Frameworks hingegen ordnet man sich selbst unter und somit gibt das Framework eine Struktur vor. Eine Library kann man also bei Bedarf nutzen, hingegen ist das Framework das eigentliche Hauptprogramm, das Teile des eigenen Codes aufruft. </p>
+    
+      <h3>jQuery Framework</h3>
+      <p class="blocksatz">Das jQuery Framework unterstützt vorallem CSS-Selektoren und AJAX (folgt in Kapitel 8). Der Vorteil gegenüber herkömmlichen JavaScript-Code ist, dass der Code durch jQuery oft deutlich kürzer ist. Ebenfalls ist jQuery sehr gut geeignet für das Gestalten interaktiver Benutzeroberflächen. Die Vorteile von jQuery sind dabei, dass die Dateigrößen sehr klein sind. Zudem baut jQuery auf CSS Wissen auf, was uns vorallem während dieser Vorlesung zu Gute kam, und ermöglicht das verwenden von PlugIns. </p>
+
+      <h4>Verwendung des jQuery Framwworks.</h4>
+      <p class="blocksatz"> Zu Beginn des Codes steht in Häufigkeit die folgende Funktion: <em>$(document).ready()</em>. Somit wird darauf gewartet bis die Seite vollständig geladen ist und erst daraufhin beginnt die Ausführung des Codes. Als Parameter können wir der Funktion dann eine anonyme Funktion mitgeben. Dies sieht wie folgt aus:</p>
+
+      <p>
+        <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/af-jquery.png" alt="jQuery">
+      </p>
+
+      <h3>jQuery Methoden</h3>
+      <p class="blocksatz"> JQuery verfügt über drei verschiedene Gruppen von jQuery-Methoden: </p>
+
+      <h4>Transparente jQuery-Methoden</h4>
+      <p class="blocksatz"> Die Gruppe gibt ein jQuery-Objekt zurück, das der Eingabe-Collection entspricht (Collection unverändert). Dazu kann man Elemente der Collection verändern. Außerdem sind die Methoden ohne Einschränkungen verkettbar.</p>
+
+      <h4>Destruktive jQuery-Methoden</h4>
+      <p class="blocksatz">Diese Gruppe gibt ein jQuery-Objekt zurück, das nicht der Eingabe-Collection entspricht. Stattdessen geben diese Methoden eine reduzierte, erweiterte, oder ganz andere Collection zurück. Diese Methoden sind ebenfalls ohne Einschränkungen verkettbar.</p>
+
+      <h4>Terminierende jQuery-Methode</h4>
+      <p class="blocksatz">Terminierende jQuery-Methoden geben kein jQuery-Objekt zurück, sondern etwas anderes, wie zum Beispiel DOM-Konten, Strings oder andere Datentypen. Diese Methoden sind nicht verkettbar.</p>
+
+      <h3>jQuery Objekt</h3>
+      <p class="blocksatz">
+        Das besondere an jQuery ist, dass man ähnlich wie mit den CSS-Selektoren arbeiten kann. Ergebnisse werden in einem speziellen <b>jQuery-Objekt</b> gespeichert, das so ähnlich wie ein JavaScript- Array funktioniert. Wie in CSS können somit Elemente (mit dem Namen des Elementes), Klassen (mit Punkt) und IDs (mit #) ausgewählt werden. Als Rückgabe erhält man dann ein jQuery-Objekt, das alle gefundenen Elemente enthält.
+      </p>
+
+      
+
+      <h4>jQuery Filter</h4>
+      <p class="blocksatz"><b>JQuery Filter</b> sind vergleichbar mit CSS-Selektoren. Mittels diesen Filter kann ein bestimmer "Bereich" oder Klasse ausgewählt werden. Die Filter-Funktion erstellt dabei ein neus Array, das mit den Ergebnissen der Filtersuche, gefüllt wird. Die Syntax lautet dabei wie folgt:</p>
+
+      <h4>$(‘Element:filter‘) oder $(‘.klassenName element:filter‘)</h4>
+
+      <p class="blocksatz">Das Stück <em>:filter</em> wird dabei durch eins der folgenden ersetzt:</p>
+
+      <ul>
+        <li>:even-filter - jedes zweite Element wird gewählt</li>
+        <li>:odd-filter - jedes ungerade Element wird gewählt</li>
+        <li>:not(‘Ausnahme‘)-filter - jedes Element ausser Ausnahme</li>
+        <li>:has(‘Enthaltener Selektor‘)-filter - Auswahl der Elemente die Selektor x enthalten
+        </li>
+        <li>:contains(‘Enthaltener Text‘)-filter - Auswahl der Elemente die bestimmten Text enthalten
+        </li>
+        <li>...
+        </li>
+      </ul>
+
+      <h3>CSS Selektoren</h3>
+      <p class="blocksatz">Ein <b>CSS Selektor</b> identifiziert HTML-Elemete durch Suchmuster. Dadurch ist es möglich Elementen, die in einem Suchmuster liegen, gemeinsame Eigenschaften mitzugeben. CSS verfügt über sehr viele Selektoren, die je nach Anwedungsfall genutzt werden. Im folgenden sind die einfachen Selektoren gelistet:</p>
+
+      <ul>
+        <li>Universalselektoren</li>
+        <li>ID-Selektoren</li>
+        <li>Klassenselektoren</li>
+        <li>Typselektoren</li>
+        <li>Attributselektoren</li>
+      </ul>
+
+      <p class="blocksatz">Hierbei konzentrieren wir uns auf die ersten beiden Punkte: <b>Universalselektoren</b> und <b>ID-Selektoren</b>.</p>
+
+      <h4>Universalselektoren</h4>
+      <p class="blocksatz">Der Universalselektor wird mit <b>*</b> aufgerufen und bezeiht sicht auf alle Elemente des Elementebaumes. Das folgende Beispiel verdeutlicht den Einsatz:</p>
+
+      <p>
+        <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/universal-selektor.png" alt="Universalselektor">
+      </p>
+
+      <p class="blocksatz">Das Beispiel zeigt somit, dass alle Elemente in der Schriftart Gotham (sans-serif) dargestellt werden.</p>
+
+      <h4>ID-Selektoren</h4>
+      <p class="blocksatz">Mit dem ID-Selektor werden Elemente durch das Suchmuster einer bestimmten ID angesprochen:</p>
+
+      <p>
+        <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/id-selektor.png" alt="ID-Selektor">
+      </p>
+
+      <p class="blocksatz">Hierbei ist zu sehen, dass das Element / die Elemente der ID <em>wichtig</em> durch den Selektor <b>fett gedruckt</b> geschrieben werden.</p>
+
+      <h3>Übung: Kreative Überschriften</h3>
+      <p class="blocksatz"> Die Übung kreative Überschriften zeigt, wie mit Hilfe von jQuery und CSS Überschriften verbessert werden können. </p>
+
+      <p>
+        <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/ueberschriften-uebung.png" alt="Gestreifte Überschriften">
+      </p>
+    </div>
+  </body>
+</html>

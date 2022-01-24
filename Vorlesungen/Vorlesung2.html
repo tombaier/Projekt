@@ -1,0 +1,198 @@
+ <!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Vorlesung 2</title>
+    <link rel="stylesheet" href="../mystyle.css">
+  </head>
+
+  <body>
+    <div class="Kopfzeile">
+      <h2>Vorlesung 2 - 18.10.2021</h2>
+      <a href="../index.html"><button class="HomeButton">Zurück zur Startseite</button></a>
+    </div>
+
+    <div class="Inhalt">
+      <h3>Einführung in HTML und JavaScript</h3>
+      <p class="blocksatz">Da wir uns in der ersten Stunde darauf geeinigt haben sowohl eine Einführung in HTML als auch in JavaScript zu machen, teilen sich diese und die nächsten Vorlesungen in einen Teil HTML und einen Teil JavaScript auf. Um ein grundlegendes Verständnis für die beiden Themen zu entwickeln, haben wir die Seite Sternback Kaffee betrachtet und bearbeitet.</p>
+
+      <h3>Struktur in HTML</h3>
+      <p class="blocksatz">Zu Beginn dieser Vorlesung haben wir uns den grundelegenden Aufbau eines HTML-Codes angeschaut. Die folgenden Abbildung zeigt eine einfache Struktur und definiert den Einsatz der verwendeten Tags: </p>
+      <p>
+        <img class="screenshot" src="../Abbildungen/htmlstruktur.png" alt="Die Struktur eines HTML Dokumentes">
+      </p>
+
+      <p class="blocksatz"> Hierbei ist noch anzumerken, dass der gezeigte Code keine Überschriften beinhaltet. Um überschriften zu erzeugen verwendet man die folgenden Tags: </p>
+
+      <p>
+        <img margin-left="10%" margin-right="10%" src="../Abbildungen/ueberschriften.png" alt="Überschriften in HTML via H-Tag">
+      </p>
+
+      <p class="blocksatz"> Vordefiniert unterscheiden sich die Überschriften in HTML durch die Nummern. Es handelt sich bei den Nummern also nicht um eine Nummer, die angibt um die wie vielte Überschrift es sich handelt. Stattdessen besagen die Nummer die Art der Überschrift. Wie bereits erwähnt unterscheiden sich die Überschriften durch die Nummer. Vordefiniert bildet <b>H1</b> die größte Überschrift, <b>H2</b> hingegen ist etwas kleiner, und so weiter... In CSS lässt sich der Style der Überschriften dann benutzerdefiniert anpassen. Somit kann zum Beispiel definiert werden, dass <b>H1</b> eine andere Schriftart und/oder -farbe als <b>H2</b> besitzen soll.</p>
+
+      <h3>Grundregel für HTML Tags</h3>
+      <h4>Element = Start-Tag + Inhalt + End-Tag</h4>
+
+      <h3>Style in HTML</h3>
+      <p class="blocksatz"> Um den Nutzer von seiner Seite zu beeindrucken, spielt der Style eine große Rolle. Denn umso schöner die Seite, desto lieber und länger besucht ein Nutzer die Seite. In HTML lässt sich der Style einer Seite mit Hilfe von <b>CSS</b> anpassen. <b>CSS</b> lässt sich entweder direkt in ein HTML-Dokument mittels des <em>style</em>-Attributes einfügen oder in einer externen <em>.css</em> Datei. </p>
+
+      <h4>CSS via <em>style</em>-Attribut</h4>
+      <p class="blocksatz"> Die erste Möglichkeit ist das direkte Zuweisen mittels des Universalattributes <em>style</em>. </p>
+
+      <p>
+        <img margin-left="10%" margin-right="10%" src="../Abbildungen/inline-style.png" alt="Inline-Style">
+      </p>
+
+      <p class="blocksatz">Wichtig hierbei ist, dass durch den sogenannten <b>Inline-Style</b> gewisse Nachteile entstehen. Zum Beispiel wird eine Wartung deutlich komplizierter, da jedes einzelne <em>style</em>-Attribut an ein Element gebunden ist und somit jedes Attribut einzeln angepasst werden muss.</p>
+
+      <h4>CSS zentral in einem <em>style</em>-Element</h4>
+      <p class="blocksatz"> Eine weiter Möglichkeit ist das Anlegen eines Styles im <b>head</b> des HTML-Dokumentes.</p>
+
+      <p>
+        <img margin-left="10%" margin-right="10%" src="../Abbildungen/head-style.png" alt="Style im head des HTML-Dokumentes definieren">
+      </p>
+
+      <p class="blocksatz"> Hierbei ergibt sich der Vorteil, dass die Styles zentral definiert sind. Somit gilt, wie im oberen Beispiel, für jede <b>H1</b>-Überschrift, das was im <b>head</b> innerhalb des Tags <em>style</em> für <b>H1</b> definiert ist. Diese Variante löst somit den Nachteil der ersten Möglichkeit. Falls Anpasungen getroffen werden müssen, ist es somit nicht von Nöten jedes einzelne <b>H1</b>-Element anzupassen, sondern es reicht den definiert Style einmal im <b>head</b> des HTML-Dokumentes anzupassen. </p>
+
+      <p class="blocksatz"> <b>Hinweis:</b> Das gerade gezeigte Beispiel definiert nun die Schriftfarbe grün und die zentrierte Ausrichtung des Textes innerhalb eines Paragraphens für <b>alle</b> Paragraphen. Das Beispiel davor hingegen definiert dies nur für genau diesen <b>einen</b> Paragraphen.</b></p>
+
+      <h4>CSS via <em>.css</em>-Datei</h4>
+      <p class="blocksatz"> In der Praxis handelt es sich sehr oft um viele verknüpfte HTML Dokumente. Dabei wird eine <em>.css</em>-Datei extern angelegt. Dadurch können die einzelnen HTML-Dokumente auf das  im <b>head</b> des Dokumentes auf das externe <b>.css "stylesheet"</b> referenzieren. Dies geschieht mittels des Tags <b>link</b> und sieht wie folgt aus: </p>
+
+      <p>
+        <img margin-left="10%" margin-right="10%" src="../Abbildungen/externe-css.png" alt="Style in externer .css-Datei">
+      </p>
+
+      <p class="blocksatz"> Das Attribut <em>rel</em> gibt hierbei den Kontext des Elements, in diesem Fall, dass es scih um ein Stylesheet handelt. Das Attribut <em>href</em> hingegen referenziert auf die einzubindende Datei. Diese Variante ermöglicht den Vorteil, dass der CSS-Code wie bei der Variante zuvor nur einmal geschrieben werden muss. Jedoch ergibt sich dabei ein weiterer noch größerer Vorteil, nämlich, dass dieses universelle "stylesheet" von mehreren HTML-Dokumenten genutzt werden kann.</p>
+
+      <p class="blocksatz"> <b>Hinweis:</b> Zusätzlich können Klassen definiert werden, die durch <em>class="Name des CSS Elementes"</em> im HTML Dokument aufgerufen werden können, um Styles an gezielten Stellen einzusetzen. Dabei steht <em>class="Name des CSS Elementes"</em> im Start-Tag.</p>
+
+      <h3>HTML Kreuzworträtsel </h3>
+      <p>Am Ende der ersten Einführung in HTML haben wir ein Kreuzworträtsel bearbeitet, welches die Kerninhalte der heutigen Themen nochmal verdeutlichen soll. Das gelöste Kreutzworträtsel sieht wie folgt aus:
+      </p>  
+
+      <p>
+        <img class="screenshot" src="../Abbildungen/kreuzwortraetsel1.jpeg" alt="Lösung des ersten Kreuzworträtsels">
+      </p>
+
+      <h3>Inhalte zu JS der Vorlesung 2</h3>
+      <p class="blocksatz">Weiterhin haben wir in der zweiten Vorlesung die grundlegenden Konzepte von JavaScript besprochen. Darunter fallen das Einbinden von JavaScript(JS) in HTML, das Initialisieren und Deklarieren von Variablen, IF und ELSE Anweisungen, FOR-Schleifen und das Document Object Model (DOM) in JavaScript.</p>
+
+      <h3>Die Einbindung von JavaScript in HTML</h3>
+      <p class="blocksatz">Für das Einbinden von JS Code in HTML Code ergeben sich, wie bei der Einbindung von CSS, mehrere Möglichkeiten. Zum einen bietet sich die Möglichkeit den JS Code direkt in ein HTML File zu schreiben. Zum anderen kann aber auch eine externe .js Datei innerhalb des HTML Codes via des script-Tags aufgerufen werden, um somit den JS Code vom HTML Code in zwei unterschiedlichen Files zu trennen.</p>
+
+      <h4>JavaScript-Code direkt in HTML</h4>
+      <p class="blocksatz">Um JavaScript-Code direkt in eine HTML-Datei zu schreiben, wird das <em>script</em>-Tag und das <em>noscript</em>-Tag benötigt. Dabei steht innerhalb <em>script</em>-Tags JavaScript-Code der ausgeführt wird. Innerhalb des <em>noscript</em>-Tags steht Code/Text, der ausgegeben wird, falls der Nutzer JavaScript innerhalb seines Broswers verboten hat. In älteren HTML-Versionen muss dabei im <em>script</em>-Start-Tag noch <em>type="text/javascript"</em> mitgegeben werden, dies ist seit HTML5 aber nicht mehr zwingend notwendig.</p>
+
+      <p class="blocksatz">Das folgende Beispiel zeigt die direkte Verwendung von JavaScript-Code in HTML:</p>
+
+      <p>
+        <img width="800px" margin-left="10%" margin-right="10%" src="../Abbildungen/js-in-html.png" alt="JS-Code direkt in HTML">
+      </p>
+
+      <p class="blocksatz">Hierbei entsteht, wie das Beispiel herausstellt, der Nachteil der Unübersichtlichkeit. Deshalb sollte man JavaScript-Code extern in einer externen <em>.js</em>-Datei behandeln:</p>
+
+      <h4>Referenz auf externe JavaScript-Datei</h4>
+      <p class="blocksatz"> Um extern auf eine <em>.js</em>-Datei zu referenzieren, muss im <b>head</b> des HTML-Dokumentes auf die Datei verwiesen werden. Dies sieht wie folgt aus:</p>
+
+      <p>
+        <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/js-in-htm-ext.png" alt="JS-Code extern">
+      </p>
+
+      <p class="blocksatz"> Diese Variante bietet den Vorteil, dass auf die <em>.js</em>-Datei nur einmal referenziert werden muss und dann Funktionen, die innerhalb dieser Datei definiert sind, aufgerufen und verwendet werden können. </p>
+
+      <h3>Variablen</h3>
+      <p class="blocksatz">Außerdem haben wir uns mit den Fragen <em>was ist eine Variable</em> und <em>wie unterscheiden sich Variablen</em> beschäftigt. Jedoch eins nach dem anderen... 
+        <br>
+        <br>
+        Zunächste klären wir die Frage was eine Variable in JavaScript überhaupt ist und wofür sie eingesetzt wird. Eine Variable ist ein Platzhalter, der Werte speichern kann. Der Vorteil dabei ist, dass diese Variable neue Werte annhemen kann. Definiert man also beispielsweise eine Variable namens "alter" kann diese mit Hilfe einer Funktion ihren gespeicherten Wert verändern. In diesem Beispiel würde die Variablen sich nach genau einem Jahr von 0 auf 1 erhöhen.
+        <br>
+        <br>
+        Nun gehen wir auf den Unterschied von Varibalen ein. Es gibt zum einen <b>lokale</b> Variablen und zum anderen <b>globale</b> Variablen. Wie der Name bereits erahnen lässt, unterscheiden diese Variablen sich in der Sichtbarkeit und im Zugriff (Nutzbarkeit). Das Schlüsselwort <b>var</b> macht dabei den Unterschied. Wenn dieses Schlüsselwort innerhalb einer Funktion <b>nicht verwendet</b> wird, so gilt die Variable <b>nicht als lokal sondern global</b>.
+        <br>
+        <br>
+        <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/global-lokal.png" alt="Gegenüberstellung lokale und globale Variablen">
+        <br>
+        <br>
+        Nun stellt sich die Frage: <em>Wieso sollte ich nicht alle Variablen global definieren?</em> Hierbei geht es um die Übersichtlichkeit und das Verständnis des Codes. Lokale Variablen die innerhalb einer Funktion verwendet werden, sollten separiert vom Rest des Codes betrachtet werden und aus diesem Grund solllten die Variaben auch von den restlichen (globalen) Variablen getrennt werden. Ziel der Trennung ist es also die <b>Komplexität</b> des Codes zu <b>reduzieren</b>.
+      </p>
+
+      <h3>Funktionen</h3>
+      <p class="blocksatz"> In JavaScript wird eine Funktion mittels des Schlüsselwortes <em>function</em> erstellt. Das folgende Beispiel zeigt das Coden einer ersten Funktion:</p>
+
+      <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/function.png" alt="Eine einfache Funktion in JS">
+
+      <p class="blocksatz"> Die gezeigte Funktion hat den Namen <em>rechnen</em> und erwartet einen Parameter, der in den runden Klammern mitgegeben wird, der <em>number</em> heißt. Die Anweisung, die innerhalb der Funktion in den geschweiften Klammern definiert wird, besagt das der Parameter <em>number</em> mit sich selbst multipliziert und durch <em>retrun</em> zurückgegeben wird.</p>
+
+      <h4>Aufrufen einer Funtkion</h4>
+      <p class="blocksatz">  Die eben formulierte Funktion <em>rechnen</em> kann wie folgt aufgerufen werden:</p>
+
+      <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/loesung-funktion.png" alt="Aufrufen der Funktion">
+
+      <p class="blocksatz"> Da wir den Wert 5 als Parameter für die Funktion mitgegeben haben, erhalten wir somit, durch die Anweisung innerhalb unserer Funktion, das Ergebnis / den Rückgabewert 25.</p>
+
+      <h3>Vordefinierte Funktionen</h3>
+      <p class="blocksatz"> JavaScript verfügt auch über vordefinierte Funktionen, die direkt aufgerufen werden können.
+        Drei, von uns in der Vorlesung behandelte, Beispiele dafür sind: </p>
+        <ul>
+          <li>parseInt()</li>
+          <li>parseFLoat()</li>
+          <li>eval()</li>
+        </ul>
+      <p class="blocksatz">Die erste Funktion <em>parseInt()</em> konvertiert einen String, der eine Zahl enthält, in eine Ganzzahl.
+        <br>
+        Die zweite Funktion <em>parseFloat()</em> ist der ersten Funktion sehr ähnlich. Die Funktion kann einen String, der eine Zahl enthählt, in eine Dezimalzahl konvertieren. Dabei ist jedoch wichtig anzufügen, dass die Funktion nur <b>Punkt zur Trennnung der Nachkommastellen</b> erkennt. 
+        <br>
+        Die dritte Funktion <em>eval()</em> ist hingegen fähig JavaScript-Code der in einem String enthalten ist zu interpretieren. 
+        <br>
+        <br>
+        <b>Hinweis:</b> Tatsächlich sind diese "vordefinierten Funktionen" auch nur zugänglich, da sie auf das Global-Objekt referenzieren.      
+      </p>
+
+      <h3>IF und ELSE Anweisungen</h3>
+      <p class="blocksatz"> IF ... ELSE Anweisungen funktionieren wie in Java. Und auch wie in Java ist eine <em>else</em>-Anweisung optional. Die Syntax sieht wie folgt aus: </p>
+
+      <h4> if (bedingung) {anweisung1} else {anweisung2} </h4>
+
+      <p class="blocksatz"> Im folgenden ein kleines Beispiel zum verdeutlichen wie eine Funnktion mit if und else Anweisungen in JavaScript aussehen kann:</p>
+
+      <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/if-else.png" alt="Beispiel Funktion mit IF-Anweisung">
+
+      <p class="blocksatz"> Das obige Beispiel zeigt die Funktion rechnen die wir zuvor erstellt haben in abgeänderter Form. Mit dem Schlüsselwort <em>let</em> und dem Namen <em>ergebnis</em> deklarieren wir eine Variable, die nur in diesem Block gültig ist und unser Ergebnis aufnehmen soll. Das Beispiel zeigt, dass beim Aufruf der Funktion der Parameter 5 mitgegeben wird. Nun wird die Funktion <em>rechnen</em> mit dem Parameter 5 ausgeführt und springt in die If Anweisung. Da der der Wert 5 größer ist als 0 wird die <em>else</em>-Anweisung nicht mehr ausgeführt und die Variable <em>ergebnis</em> erhält den Wert <em>positiv</em>.</p>
+
+      <h3>FOR-Schleifen</h3>
+      <p class="blocksatz">Auch <em>for</em>-Schleifen in JavaScript sind aufgebaut wie in Java. So sieht eine <em>for</em>-Schleife in JavaScript folgendermaßen aus:</p>
+
+      <h4> for (Initialwert; Bedingung; erhöhenderAusdruck) {Anweisung(en)} </h4>
+
+      <p class="blocksatz"> Der <b>Initialwert</b> definiert den Starwert der <em>for</em>-Schleife. Die <b>Bedingung</b> wird geprüft und liefert entweder den Wert <em>true</em> oder <em>false</em>. Wenn die Bedingung <em>true</em> ist, so werden die Anweisungen innerhalb der geschweiften Klammern ausgeführt. Die <em>for</em>-Schleife wird dabei solange durchlaufen bis die Bedinung <em>false</em>ist. Der <b>erhöhenderAusdruck</b> ist dabei meistens eine Operation wie zum Beispiel ein Postinkrement. </p> 
+
+      <h3>Weitere Schleifen</h3>
+
+      <p class="blocksatz"> JavaScript verfügt zudem über weitere Modelle, die analog zu Java sind und deshalb hier nicht tiefer behandelt werden, wie zum Beispiel: </p>
+
+      <ul>
+        <li>While-Schleifen</li>
+        <li>Do-While-Schleifen</li>
+        <li>Switch-Case-Anweisungen</li>
+      </ul>
+
+      <h3>Documentation Object Model (DOM)</h3>
+      <p class="blocksatz"> Das <b>DOM</b> ist eine Schnittstelle zwischen HTML und JavaScript. Dabei werden alle Elemente durch Objekte repräsentiert. Diese sind hierarchisch angeordent und können manipuliert werden. Damit einzelne Objekte erkann werden können werden <b>eindeutige IDs</b> vergeben, die das ansprechen eines spezifischen Objektes ermöglichen. JavaScript kann daraufhin durch die Punktnotation auf ein Elemt zu greifen. Dies sieht dann wie folgt aus:</p>
+
+      <h4>var porsche911 = document.getElementById(porsche911)</h4>
+
+      <p class="blocksatz"> Durch den sogenannten <b>Praser</b> werden die HTML-Elemente in einen hierarchischen Elementebaum überführt. CSS und JavaScript beziehen sich somit dann auf diesen Baum. Dabei werden einzelne Objekte des Baumes als <b>Knoten</b> bezeichnet. <b>Knoten</b> können Elemente, Attribute oder auch Texte sein. Doch wie sieht dieser hierarchische Elementebaum jetzt eigentlich aus? Beispielsweise so:</p>
+
+      <p>
+        <img width="800px" margin-left="10%" margin-right="10%" src="../Abbildungen/elementebaum.png" alt="Elementebaum">
+      </p>
+
+      <p class="blocksatz">Quelle: <a href="https://wiki.selfhtml.org/wiki/JavaScript/DOM">https://wiki.selfhtml.org/wiki/JavaScript/DOM</a></p>
+
+
+    </div>
+
+  </body>
+</html>

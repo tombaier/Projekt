@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Vorlesung 7</title>
+    <link rel="stylesheet" href="../mystyle.css">
+  </head>
+
+
+  <body>
+    <div class="Kopfzeile">
+      <h2>Vorlesung 7 - 06.12.2021</h2>
+      <a href="../index.html"><button class="HomeButton">Zurück zur Startseite</button></a>
+    </div>
+
+    <div class="Inhalt">
+
+     <h3>Anonyme Funktionen</h3>
+      <p class="blocksatz"> Anonyme Funktionen sind Fuktionen ohne Namen, die sofort ausgeführt werden. Diese werden oft eingesetzt, wenn eine Funktion nur in einem bestimmten Bereich benötigt wird. Zudem werden anonyme Funktionen auch oft an "höhere" Funktionen übergeben, und somit ihr Gültigkeitsbereich innerhalb der höheren Funktion liegt. Anonyme Funktionen können:</p>
+
+      <ul>
+        <li>in Variablen gespeichert werden,</li>
+        <li>innerhalb anderer Funktionen stehen,</li>
+        <li>oder auch im Konstruktor initialisiert werden.</li>
+      </ul>
+
+      <p class="blocksatz">Als Beispiel ist hier der Code für das Speichern einer anonymen Funktion innerhalb einer Variable:</p>
+
+      <p>
+        <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/anonymeFunktion.png" alt="Anonyme Funktion in Var">
+      </p>
+
+      <p class="blocksatz">Die anonyme Funktion kann durch den <b>Variablennamen</b> gefolgt von <b>()</b> aufgerufen werden.</p>
+
+
+      <h3>Übung: Pull Quotes</h3>
+      <p class="blocksatz"> In diese Übung ging es darum durch Pull Quotes den text zu verschönern und gleichzeitig wichtige Aussagen, wie unten sichtbar, herauszustellen.</p>
+      
+      <p>
+        <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/pull-quotes.png" alt="Pull Quotes einfügen">
+      </p>
+
+      <p class="blocksatz">Dabei wir CSS und jQuery verknüpft, um dies möglich zu machen. Zunächst folgt der CSS-Code und JavaScript-Code:</p>
+
+      <p>
+        <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/pullquotes-uebung.png" alt="Pull Quotes Code">
+      </p>
+
+      <p class="blocksatz"> Wie im oberen Teil de Codes zu erkennen ist, wird mit CSS unter <em>.pullquote</em> definiert wie eine Pull Quote aussehen soll. Im JavaScript-Code wird daraufhin definiert wie eine Pull Quote erzeugt werden kann.<b>Wichtig</b> dabei sind die Zeilen 29 und 30. dabei wird <em>pq</em> durch <em>pullqoute</em> ersetzt. Dies wird interessant, wenn wir eine Pull Quote in HTML einfügen:
+      </p>
+
+      <p>
+        <img width="800px" margin-left="10%" margin-right="10%" src="/../Abbildungen/pq-tag.png" alt=" Class pq im span-Tag">
+      </p>
+
+      <p class="blocksatz">Hierbei wird der Text, der eine Pull Quote werden soll, in ein <em>span</em>-Tag mit der Klasse <em>pq</em> gepackt. JQuery erkennt diese Klasse und weiss dadurch, dass eine Pull Quote erwünscht ist und greift somit auf die CSS-Vorlage für eine Pull Quote zurück.</p>
+
+      <h3>JavaScript und jQuery Events</h3>
+      <p class="blocksatz"> JavaScript-Programme unterscheiden sich in die Bestandteile des asynchronen (wird ausgeführt wenn etwas schief geht) und synchronen (wird beim Aufruf eines Scriptes ausgeführt)Codes. Teil des <b>synchronen</b> Codes ist es dabei der Ausführungsumgebung bekanntzugeben für welche Geschehnisse sich das Script interessiert, damit die entsprecchende Reaktion gestartet werden kann. 
+      </p>
+
+      <p class="blocksatz"> Die in der Vorlesung behandelte Seite <em>events.html</em> verdeutlicht dabei wie viele Events stattfinden. Die Mausbewegung, das Klicken, alles schießt ein Event. Dabei muss immer darauf geachtet werden was passiert, damit der JavaScript-Code im Falle sofort antworten kann.</p>
+
+      <h4>Mouse-Events</h4>
+      <ul>
+        <li><em>Click-Event</em> - wird ausgeführt sobald die Maus geklickt wird</li>
+        <li><em>DoubleClick-Event</em> - wird bei einem Doppelklick ausgeführt</li>
+        <li><em>Mousedown-Event</em> - Moment, in dem die Maus geklickt aber noch nicht losgelassen wurde</li>
+        <li><em>Mouseup-Event</em> - Moment, wenn die Taste wieder losgelassen wird</li>
+        <li><em>Mouseover-Event</em> - wird ausgelöst, sobald sich die Maus über eine Seite bewegt</li>
+      </ul>
+
+      <p class="blocksatz">Aber nicht nur die Aktionen der Maus lösen Events aus...</p>
+
+      <h4>Formular-Events</h4>
+      <p class="blocksatz">Events in HTML-Formularen sind dabei passend zu ihren eigentlichen Funktionen: <em>submit, reset, change, focus </em> und <em>blur</em>. Als Beispiel wird das <em>submit</em>-Event ausgelöst, wenn das Formular abgesendet wird. dadurch ist es noch möglich Validierungen druchführen bevor die Daten zum Server gesendet werden. Ein <em>reset</em>-Event wird durch das Neuladen einer Seite ausgelöst. <em>chnage</em>-Event wird hingegen ausgelöst, wenn eine Änderung vom Nutzer getätigt wird. Also wenn sich zum Beispiel der Inhalt eines Textfeldes ändert. Die Events <em>focus</em> und <em>blur</em> sind Gegenteile. Wenn zum Beispiel ein betsimmtes Feld angeklickt wird so wird dieses in den Fokus gesetzt und alles darum ist dann "blur". </p>
+
+      <h3>Inline Events</h3>
+      <p class="blocksatz">Events können auf unterschiedliche Weisen genutzt werden. Ein Beispiel ist das folgende <em>onClick</em>-Event. Hier wird nachdem sie den Button klicken sofort eine Reaktion gegeben: </p>
+
+      <input type="button" value="Event" onclick="alert('Reaktion')">
+
+      <p class="blocksatz">Eine weitere Methode ist das direkte Übergeben einer Referenz auf eine selbstgeschriebenen Funktion an den Event Handler. Bei den bis jetzt vorgstellten Möglichkeiten entsteht jedoch das Problem, dass wenn eine Zuweisung mehrfach durchgeführt wird, die erste Zuweisung gelöscht wird. Wenn also verschiedene Funktionen mit dem gleichen Event ausgelöst werden sollen, ist dies nicht möglich. Die <b>Lösung</b> dafür ist der <b>Event-Listener</b>. Doch zuerst...</p>
+
+      <h3>"Traditionelles Event"</h3>
+      <p class="blocksatz">Im traditionellen Modell können Event-Handler durch Skripte hinzugefügt oder entfernt werden. Wie beim Inline-Modell kann für jedes Ereignis nur ein Event-Handler registriert werden. Das Ereignis wird hinzugefügt, indem der Name des Handlers der Ereigniseigenschaft des Elementobjekts zugewiesen wird. Um einen Event-Handler zu entfernen, setzt man die Eigenschaft einfach auf null. </p>
+
+      <h3>Event-Listener</h3>
+      <p class="blocksatz">Event-Listener achten dabei sind dabei an bestimmte Events gebunden und ermöglichen somit die gezielte Nutzung von Events und das Vermeiden von Überschriebungen der Zuweisungen. Diese Event-Listener funktionieren dabei mit jQuery und sehen im Code wie folgt aus:</p>
+      
+      <p>
+        <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/event-listener.png" alt="Event-Listener">
+      </p>
+
+      <h3>Fortgeschrittenes Eventmanagement mittels bind()</h3>
+      <p class="blocksatz">Die <em>bind()-</em>Methode ist ein weiterer Weg mit Events umzugehen. Sie ermöglicht es zusätzliche Daten an die Event-Handler-Funktion zu übergeben. Dies hat den Vorteil, dass jenachdem welches Event ausgelöst wurde, eine einzige Funktion auf unterschiedliche Weisen reagieren kann. Dabei sieht die Syntax wie folgt aus:</p>
+
+      <h4>$ (`#selektor‘).bind(`click`, daten, funktionsName);</h4>
+
+      <p class="blocksatz">Das erste Argument ist der String mit dem Eventnamen. Das zweite Argument enthält die Daten, die an die Funktion übergeben werden sollen. Das dritte Argument ist eine andere Funktion, die an die bind()-Funktion übergeben.</p>
+
+      <h3>Übung: Akkordeon</h3>
+      <p class="blocksatz"> In der Akkordeon ging es darum mit Hilfe von jQuery Boxen zu schaffen, deren Inhalt sich öffnen und auch schließen lässt. Der folgende Screenshot zeigt wie das Ergebnis aussehen sollte. Dabei sollten beim Start die ersten beiden Akkordeon-Boxen geschlossen und <em>Akkordeon 3</em> geöffnet sein. Zusätzlich ergibt sich durch Klicken die Möglichkeit die einzelnen Boxen entweder zu öffnen oder schließen.</p>
+
+      <p>
+        <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/akkordeon-uebung.png" alt="Akkordeon Übung">
+      </p>
+
+      <h3>Übung: Pop-Up Fenster</h3>
+      <p class="blocksatz"> Die Übung Pop-Up Fenster zeigt wie durch das Klicken auf ein Button eine neue Webseite über ein Pop-Up Fenster geöffnet wird. Der unten folgende Button öffnet ein Pop-Up Fenster. </p>
+
+      <input type="button" value="DHBW Mannheim" onclick="window.open('https://www.mannheim.dhbw.de/startseite','popUpWindow','height=500,width=700,left=400,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');">
+
+      <p class="blocksatz">Ein Pop-Up Fenster kann mit diesem Code geschaffen werden: </p>
+
+      <p>
+        <img width="900px" margin-left="10%" margin-right="10%" src="../Abbildungen/popup-code.png" alt="Code zur Übung">
+      </p>
+    </div>
+  </body>
+</html>

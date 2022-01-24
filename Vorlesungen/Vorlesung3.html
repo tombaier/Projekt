@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Vorlesung 3</title>
+    <link rel="stylesheet" href="../mystyle.css">
+  </head>
+
+
+  <body>
+    <div class="Kopfzeile">
+      <h2>Vorlesung 3 - 08.11.2021</h2>
+      <a href="../index.html"><button class="HomeButton">Zurück zur Startseite</button></a>
+    </div>
+
+    <div class="Inhalt">
+
+      <h3>Einfügen von Hyperlinks</h3>
+      <p class="blocksatz"> Das Einfügen von Hyperlinks in HTML ist sehr simpel. Dafür wird das Tag <em>a</em> verwendet, welches definiert, dass ein Hyperlink folgt. Das Tag wird dabei von dem Attribut <em>href</em> gefolgt, welches den Link der Seite beinhaltet. Im Code sieht das Einfügen eines Hyperlinks in HTML dann so aus:</p>
+
+      <p>
+        <img width="800px" margin-left="10%" margin-right="10%" src="../Abbildungen/hyperlink.png" alt="Hyperlink einfügen">
+      </p>
+        
+      <p class="blocksatz">
+        Außerdem kann man auch E-Mail Adressen verlinken. <a href="mailto:tombaier27@icloud.com">tombaier27@icloud.com</a> lautet meine E-Mail Adresse. Im Code wird die Verlinkung so gebaut:
+      </p> 
+    
+      <p>
+        <img width=900px" margin-left="10%" margin-right="10%" src="../Abbildungen/mail.png" alt="Mail als Hyperlink einfügen">
+      </p>
+
+      
+
+      <h3>Strukturierung einer Seite</h3>
+      <p class="blocksatz">Wir haben uns in der 2. Vorlesung mit der Struktur in HTML beschäftigt. Nun geht es um das Verständnis wie verschiedene Seiten miteinander verknüpft werden können. Zur Verlinkung werden dazu relative Pfade verwendet. Somit können verschiedene HTML Dateien miteinander verknüpft werden. Eine Verlinkung kann dann über verschiedene Design-Elemente umgesetzt werden. Zum Beispiel kann ein Hyperlink in einem Text oder auch ein Button zu einer neuen Seite führen. Wie eine Verlinkung umgesetzt wird hängt von dem Design ab, dass der Programmier haben möchte. </p>
+
+      <h3>Absolute vs. Relative Pfade</h3>
+      <p class="blocksatz"> <b>Absoulte</b> Pfade geben den spezifischen Pfad an. Man kan es mit einem Koordinatensystem vergleichen in dem man bei dem 0 Punkt startet. <b>Relative</b> Pfade hingegen stehen in Relation zu ihrem Ausgangspunkt. Anhand des Koordinatensystem-Beispiels würde der Pfad dann nicht bei dem Punk 0 Beginnen sondern, an dem Punkt, an dem der Ausgangspunkt steht. Praktisch lässt sich dies in HTML-Code so umsetzen:</p>
+
+      <p>
+        <img width=900px" margin-left="10%" margin-right="10%" src="../Abbildungen/pfade.png" alt="Pfade">
+      </p>
+
+
+      <h3>Übung: KopfüBar</h3>
+      <p class="blocksatz">Die gelerneten Inhalte der ersten 3 Vorlesungen haben wir daraufhin alle in der Übung KopfüBar angewendet. Durch die Übung kann man nun über die Startseite auf Unterseiten zugreifen und das Design sieht, Dank der erlernten CSS Inhalte, deutlich besser aus.</p>
+
+      <p>
+        <img width=800px" margin-left="10%" margin-right="10%" src="../Abbildungen/kopfübar.jpeg" alt="KopfüBar">
+      </p>
+
+      <h3>HTML Kreuzworträtsel</h3>
+      <p class="blocksatz">Am Ende des heutigen HTML-Teils der Vorlesung haben wir, um die Inhalte zu verinnerlichen, ein zweites Kreuzworträtsel mit den folgenden Lösungen bearbeitet:</p>
+
+      <p>
+        <img width=900px" margin-left="10%" margin-right="10%" src="../Abbildungen/html-raetsel.jpeg" alt="Kreuzworträtsel 2">
+      </p>
+
+      <h3>Strings</h3>
+      <p class="blocksatz">In JavaScript haben Strings <b>zwei Bedeutungen</b>. Zum einen ist ein String ein <b>einfacher Datentyp</b> für Zeichenketten und zum anderen ein <b>globales Objekt</b> zur Handhabung von Zeichenketten. Da der Umgang mit einem String als Datentyp bereits aus Java bekannt ist, behandeln wir im folgenden Abschnitt String Objekte in JavaScript.</p>
+
+      <h3>String Objekte</h3>
+      <p class="blocksatz">Das <em>String</em>-Objekt ist ein Konstruktor für Strings. JavaScript ermöglicht es durch das <em>String</em>-Objekt interaktive Formulare auszulesen. Die Instanzen des Objekts ermöglichen somit diverse Textmanipulationen. Damit dies funktioniert muss somit mindestestens eine Instanz dieses Objektes erzeugt werden. Dafür gibt es die folgenden drei Möglichkeiten:</p>
+
+      <p>
+        <img width=400px" margin-left="10%" margin-right="10%" src="../Abbildungen/string-objekt.png" alt="String Objekte">
+      </p>
+
+      <h3>Formulare</h3>
+      <p class="blocksatz">Um in einem HTML-Formular wird das Tag <em>form</em> benötigt. Mit einem Formular werden die Eingaben des Nutzers aufgenommen. In der Außenwelt wird dazu noch eine serverseitige Verarbeitung der Daten stattfinden, dies geschieht meist mittels einer PHP-Anwendung. In unserem Fall liegt zunächst der Fokus auf dem Design. Dabei gibt es verschiedene HTML-Elemente wie zum Beispiel Input-Felder oder Radio-Buttons, die zur graphischen Darstellung des Formulars dienen können. Dazu können in JavaScript mittels <em>getElementById</em> die erstellten HTML-Elemente gefunden werden. Zuzuüglich lassen sich dann die EIngaben durch verschiedene Funktionen auf Rcihtigkeit prüfen. Mehr zu dem Thema <b>Formulare</b> haben wir in Übung 4.2 in der 5. Vorlesung behandelt. </p>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Vorlesung 1</title>
+    <link rel="stylesheet" href="../mystyle.css">
+  </head>
+
+  <body>
+    <div class="Kopfzeile">
+      <h2>Vorlesung 1 - 11.10.2021</h2>
+      <a href="../index.html"><button class="HomeButton">Zurück zur Startseite</button></a>
+    </div>
+
+    <div class="Inhalt">
+      <h3>Vorwort</h3>
+      <p class="blocksatz">Dieses Portfolio soll keine Eins-zu-Eins Reproduktion des Skriptes darstellen. Vielmehr habe ich mich darauf konztentriert die Kernaussagen herauszufiltern und die für mich wichtigen Inhalte und alle Übungen in diesem Portfolio festzuhalten. Dabei werde ich die gelernten Inhalte auch bei der Erstellung dieses Portfolios miteinbinden.</p>
+
+      <h3>Einführung</h3>
+      <p class="blocksatz">Die heutige Vorlesung war unsere erste von acht Vorlesung in Web-Programmierung. Dabei sprachen wir zu Beginn über unsere Prüfungsleistung. Als Kurs entschieden wir uns dabei für die Abgabe dieses Portfolios inklusive Übungen und einer kurzen Präsentation mit Fragerunde. Nach Festlegung der Prüfungsleistung sind wir dann in das Thema eingestiegen.</p>
+
+      <h3>Motivation</h3>
+      <p class="blocksatz">Dabei begannen wir über Vor- und Nachteile einer Software als Web-Anwendung zu sprechen. Der wohl größte Diskussionspunkt dabei war die Ausführung der Anwendung, denn im Vergleich zu einer Software die auf einem System installiert wird, kann eine Web-Anwendung über nahe zu alle modernen Browser, <b>ohne Download und Installation</b>, genutzt werden. Dies ist auch für die Sicherheit des eigenen Geräts vorteilhaft, denn bei einem Download besteht die Gefahr, dass der Downlad Malware (Schadprogramme) enthält, die unser System angreift, ohne dass wir davon wissen. Ein weiterer Vorteil einer Web-Anwendung ist, dass der Code nur einmal geschrieben werden und nicht für die verschiedenen Betriebssysteme und Systemarchitekturen angepasst werden muss.</p>
+
+      <h3>Architektur von Web-Anwendungen</h3>
+      <p class="blocksatz">Im Folgenden haben wir uns verschiedene Arten von Architekturen für Web-Anwendungen angesehen.</p>
+
+      <h3>Deployment clientseitig</h3>
+      <p class="blocksatz">Zu Beginn haben wir uns den clientseitigen Ansatz genauer angeschaut. Wie die untere Abbildung zeigt, liegt dabei ein executeable, zum Beispiel eine Java Datei (.jar) auf einem Webserver. Diese Datei wird zur Laufzeit heruntergeladen und auf dem eigenen System/Computer ausgeführt. </p>
+
+      <img margin-left="10%" margin-right="10%" width="600px" src="../Abbildungen/clientseitiger-aufbau.png" alt="Deployment clientseitig">
+
+      <p class="blocksatz"> Diese Art von Archtitektur bringt, wie oben beschrieben, den Nachteil mit sich, dass eine Datei aus dem Web heruntergeladen und auf dem eigenen System ausgeführt wird. Dabei weiss der Nutzer dann nicht, ob sich Schadprogramme auf dem System ausbreiten.</p>
+
+      <h3>Deployment serverseitig</h3>
+      <p class="blocksatz">Der zweite Ansatz ist die serverseitige Ausführung des Codes. Dies stellt somit das Gegenteil zu dem ersten Ansatz da. Dieser Ansatz führt Code, zum Beipsiel PHP-Code, auf dem Webserver aus. Der Endnutzer bekommt dadurch eine statische HTML Seite zu sehen und benötigt kein Download einer Datei. Ein Nachteil, der hierbei entsteht, ist die Nutzbarkeit (=Usability) der Webanwendung.</p>
+
+      <h3>Kombination der beiden Ansätze</h3>
+      <p class="blocksatz"> Der dritte und letzte Ansatz bildet eine Art Schnittstelle und kombiniert die beiden zuvor präsentierten Ansätze. Dabei wird clientseitig beispielsweise mit JavaScript gearbeitet und serverseitig mit PHP gearbeitet.</p>
+
+      <img margin-left="10%" margin-right="10%" width="800px" src="../Abbildungen/serverseitiger-aufbau.png" alt="Deployment serverseitig">
+
+      <p class="blocksatz">Dieser Ansatz ermöglicht es die beiden oben genannten Nachteile abzuschaffen, denn somit ist kein Download einer Datei nötig und trotzdem leidet die Usability nicht darunter. </p>
+
+      <h3>Skriptsprachen</h3>
+      <p class="blocksatz">Eine Skriptsprache wie zum Beipsiel JavaScript ist zunächst auch eine Programmiersprache. Sie unterscheidet sich jedoch von herkömmlichen Programmiersprachen, wie zum Beispiel Java, dadurch, dass sie statt eines Compilers einen Interpreter verwendet. Der Interpreter dient zum Übersetzen des Quellcodes. Im Gegensatz zu einem Compiler, übersetzt der <b>Interpreter</b> den Quellcode nicht einmalig vor Programmstart, sondern der Interpreter übersetzt den Quellcode iterativ wärhend der Ausführung des Codes.
+        <br>
+        <br>
+        Skriptsprachen werden für den Einsatz auf Webservern genutzt. Sie vereinfachen die Verarbeitung von Texten und eigenen sich somit sehr gut zur dynamischen Erzeugung von HTML-Seiten. Diese <b>Dynamik</b> zeigt sich auch bei der Typprüfung, denn Skriptsprachen legen sich im Vorhinein nicht auf einen Datentyp für eine Variable fest. Als Beispiel kann <b>JavaScript</b> als <b>clientseitige Skriptsprache</b> und <b>PHP</b> als <b>serverseitige Skriptsprache</b> eingesetzt werden. 
+        <br>
+        <br>
+        <b>Anmerkung:</b> Heutzutage wird oftmals eine Mischung aus einer konventionellen Programmiersprache, wie Java, und einer Skriptsprache, wie JavaScript, verwendet, um die Vorteile beider Modelle nutzen zu können.  
+      </p>
+      
+    </div>
+  </body>
+</html>

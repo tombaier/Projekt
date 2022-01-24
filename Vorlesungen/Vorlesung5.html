@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vorlesung 5</title>
+    <link
+      rel="stylesheet"
+      href="../mystyle.css"
+    />
+  </head>
+
+  <body>
+    <div class="Kopfzeile">
+      <h2>Vorlesung 5 - 22.11.2021</h2>
+      <a
+        href="../index.html"
+        ><button class="HomeButton">Zurück zur Startseite</button></a
+      >
+    </div>
+
+    <div class="Inhalt">
+      <p class="blocksatz">
+        Die heutige Vorlesung war die erste Vorlesung, die sich nur noch um JavaScript handelte, da wir letzte Woche die HTML Einführung abgeschlossen haben.
+      </p>
+
+      <h3>Arrays</h3>
+      <p class="blocksatz">Das <b>Array</b> ist ein globales Objekt und ein Konstruktor für das Erstellen von Arrays in JavaScript. Bei einer Erzeugung eines <em>Array</em>-Objektes kann die gewünschte Größe / Länge des Arrays angegeben werden. Bei der Erstellung des Objektes steht dann zu beginn alle Elemente auf <em>undefined</em>. </p>
+
+      <h4>var liste = new Array(5);</h4>
+
+      <p class="blocksatz"> In diesem Beispiel wird ein Wert mit dem Namen <em>liste</em> erzeugt. Das Array hat eine Länge von 5, das heißt, dass heißt das Array geht von der Stelle 0 bis zur Stelle 4. Nach der Erzeugung des Objektes kann dieses mit Werten gefüllt werden:</p>
+
+      <p>
+        <img width="400px" margin-left="10%" margin-right="10%" src="../Abbildungen/array-fuellen.png" alt="Werte in Arrays eintragen"">
+      </p>
+
+      <p class="blocksatz">Arrays werden häufig in <b>Kombination mit Schleifen</b> verwendet. ZUm beispiel kann man mit einer <em>for</em>-Schleife alle Felder eines Arrays durchlaufen. Zudem bieten Arrays in JavaScript den Vorteil, dass sie <b>dynamisch</b> sind. Somit kann ein Array verlängert werden, um einen weiteren Wert hinzuzufügen. Als Beispiel kann man den Konstruktor ohne einen Parameter beim Erstellen eines Arrays aufrufen, dadurch hat das Array eine unbestimmte Länge:</p>
+
+      <h4>var liste2 = new Array();</h4>
+
+      <p class="blocksatz"> Außerdem können verschiedene Typen innerhalb eines Arrays stehen. So kann zum Beispiel auf der Stelle 1 ein Float gespeichert werden und auf der 2. Stelle ein String.</p>
+
+      <h3>Objekte</h3>
+      <p class="blocksatz">
+        Objekte sind Behälter und JavaScript ist eine Skriptsprache, die mittlerweile als objektorientiert bezeichnet werden kann. JavaScript arbeitet mit Objekten und baut auf Objekten auf. Dabei werden Objekte zur Verfügung gestellt, die über "Eigenschaften" (= Attribute, Elemente) und "Fähigkeiten/Methoden" (= Funktionen) verfügen. Ein Vorteil dabei ist, dass die Modellierung wie in der realen Welt stattfindet. 
+      </p>
+
+      <h4>Auto Beispiel</h4>
+      <p class="blocksatz"> Gegenstände in der Realität haben Eigenschaften und Fähigkeiten. Zum Beispiel hat ein Auto eine Farbe (=Eigenschaft) und das Auto kann fahren (=Funktion). Und genau so wird es in JavaScript umgesetzt. Wir erzeugen, in diesem Beispiel, ein Objekt der Klasse Auto. das Objekt erhält dabei die Eigenschaft, dass das Auto blau ist und die Funktion <em>fahren()</em>, damit das Auto fahrtüchtrig ist. </p>
+
+      <h4>Eigenschaften</h4>
+      <p class="blocksatz"> Eine Eigenschaft ist wie eine Variable, die einem Objekt zu geordnet ist.</p>
+
+      <h4>Methoden</h4>
+      <p class="blocksatz"> Eine Methode ist eine Funktion, im Bezug auf ein Objekt.</p>
+      
+      <p class="blocksatz"> Der Unterschied zu herkömmlichen Variablen und FUnktionen, ist also, dass bei Eigenschaften und Methoden immer ein Bezug zu einem Objekt vorhanden sein muss. Man sagt also nicht, dass die Variable <em>farbe</em> blau ist, sondern das nur die Eigenschaft <em>farbe</em> für genau dieses eine Auto-Objekt blau ist. SOmit kann die eigenschaft <em>farbe</em> bei einem zweiten Auto den Wert rot erhalten.</p>
+
+      <h3>JavaScript Objekte</h3>
+      <p class="blocksatz">In JavaScript gibt es bereits einige existierenden Objekte, wie zum Beispiel das Broswerfenster. Andere Objekte müssem selbst erstellt werden, die geschieht mittels des Konstruktors. Der <b>Konstruktor</b> ist eine spezielle Methode zur Erzeugung eines Objektes. </p>
+
+      <h4>Beispiel Erzeugung eines String-Objektes namens "JavaScript":</h4>
+      <h4>var str = new String("JavaScript");</h4>
+      
+
+      <h3>Konstruktor</h3>
+      <p class="blocksatz">Der Konstruktor ist wie bereits erwähnt eine spezielle Methode. Zur Unterscheidung wird dabei der erste Buchstabe des Namens groß geschrieben. JavaScript erkennt dabei keinen Fehler, falls der Buchstabe klein geschrieben wird, sondern dies wird nur zur deutlichen Abgrenzung (guter Programmierstil) getan.</p> das Schlüsselwort <em>new</em> wird benötigt zum Aufruf des Konstruktor und erklärt das ein neues Objekt dieses Types erzeugt werden soll. Die Referenz auf das Obkjet wird dann innerhalb der Variable <em>str</em> gespeichert.
+
+      <h3>JSON</h3>
+      <p class="blocksatz">
+        <b>JSON</b> ist die Abkürzung für <b>JavaScript Object Notation</b>. Dabei verändert sich die Syntax. Bei JSON wird <b>statt</b> eines <b>=</b> ein <b>:</b> und ein <b>,</b> zur Trennung der Eigenschaften verwendet. Am Beispiel ihres Skriptes sieht das Ganze dann wie folgt aus: 
+      </p>
+
+      <p>
+        <img width="600px" margin-left="10%" margin-right="10%" src="../Abbildungen/json.png" alt="Objekterzeugung JSON">
+      </p>
+
+      <p class="blocksatz"> Der Aufruf zu diesem Beispiel sieht folglich so aus:</p>
+
+      <h4>meinObjekt.meineMethode();</h4>
+
+      <p class="blocksatz"> Somit kann man sehen, dass das Objekt <em>meinObjekt</em> ohne das Schlüsselwort <em>new</em> erzeugt wurde. Zudem wurde in der Variable <em>meinObjekt</em> eine Eigenschaft und eine Methode des Objektes definiert. <b>JSON</b> unterstützt somit das Handeln von Objekten.</p>
+
+      
+
+      <h3>Übung 4.1</h3>
+
+      <script type="text/javascript">
+        String.prototype.gesperrt = function () {
+          var str = " ";
+          for (var i = 0; i < this.length; i++) {
+            str += this.charAt(i) + " ";
+          }
+          return str;
+        };
+      </script>
+
+      <p>Bitte geben Sie hier den Text eingeben, der gesperrt werden soll.</p>
+
+      <form name="Form">
+        <input type="text" name="eingabe" id="eingabe" />
+        <input
+          type="button"
+          id="button"
+          value="Sperren!"
+          onclick="document.Form.eingabe.value = document.Form.eingabe.value.gesperrt()"
+        />
+      </form>
+
+      <h4>Protoyping</h4>
+      <p class="blocksatz">Prototypen ist der Mechanismus, durch den JavaScript-Objekte Funktionen voneinander erben. Um Vererbung zu ermöglichen, können Objekte ein Prototyp-Objekt haben, das als Vorlagenobjekt fungiert, von dem sie Methoden und Eigenschaften erben. Diese können im Konstruktor definiert werden.</p>
+
+      <h3>Übung 4.2</h3>
+      <script>
+        // Zum Speichern der User
+        var userList = new Array();
+        // Zum Zählen der User
+        var userCount = 0;
+
+        // Konstruktor vom User
+        function User(vorname, nachname, alter, weiblich, username, passwort) {
+          // Übergabewerte werden in lokale Variablen übergeben
+          var vorname = vorname;
+          var nachname = nachname;
+          var alter = alter;
+          var weiblich = weiblich;
+          var username = username;
+          var passwort = passwort;
+
+          // Öffentliche Funktionen für User
+          this.getAlter = function () {
+            return alter;
+          };
+          this.getVorname = function () {
+            return vorname;
+          };
+          this.getNachname = function () {
+            return nachname;
+          };
+          this.setName = function (neuerName) {
+            nachname = neuerName;
+          };
+          this.getIstWeiblich = function () {
+            return weiblich;
+          };
+          this.getUsername = function () {
+            return username;
+          };
+          this.checkUser = function (pw, un) {
+            if (passwort == pw) {
+              if (username == un) {
+                return true;
+              }
+            } else {
+              return false;
+            }
+          };
+        }
+
+        // Werte werden aus Feldern übernommen
+        function addUser() {
+          var vorname = document.getElementById("vorname").value;
+          var nachname = document.getElementById("nachname").value;
+          var alter = document.getElementById("alter").value;
+          var weiblich = document.getElementById("weiblich").checked;
+          var username = document.getElementById("username").value;
+          var passwort = document.getElementById("passwort").value;
+
+          // User wird in Array übergeben
+          var user = new User(
+            vorname,
+            nachname,
+            alter,
+            weiblich,
+            username,
+            passwort
+          );
+          userList[userCount++] = user;
+        }
+        function ausgabeUser() {
+          var ausgabe = "";
+          document.getElementById("ausgabe").innerHTML = "";
+          for (var i = 0; i < userList.length; i++) {
+            ausgabe +=
+              i +
+              1 +
+              ". " +
+              userList[i].getVorname() +
+              " " +
+              userList[i].getNachname() +
+              " " +
+              userList[i].getAlter() +
+              " " +
+              userList[i].getIstWeiblich() +
+              " " +
+              userList[i].getUsername() +
+              "<br>";
+          }
+          document.getElementById("ausgabe").innerHTML += ausgabe;
+        }
+
+        function ausgabeAlter() {
+          var w = prompt("User Nummer eingeben.");
+          j = w;
+          w = w - 1;
+          alert(
+            "Das Alter von User " + j + " ist " + userList[w].getAlter() + "."
+          );
+        }
+        function ausgabeWeiblich() {
+          var w = prompt("User Nummer eingeben.");
+          j = w;
+          w = w - 1;
+
+          alert(
+            "Der User " +
+              j +
+              " ist weiblich: " +
+              userList[w].getIstWeiblich() +
+              "."
+          );
+        }
+        function aendernNachname() {
+          var w = prompt("User Nummer eingeben.");
+          var neuerNachname = prompt(
+            "Neuen Nachnamen für User " + w + " eingeben."
+          );
+          j = w;
+          w = w - 1;
+          userList[w].setName(neuerNachname);
+        }
+        function pruefeUser() {
+          var w = prompt("User Nummer eingeben.");
+          var un = prompt("Usernamen eingeben.");
+          var pw = prompt("Passwort für Usernamen " + un + " eingeben.");
+          w = w - 1;
+          alert(userList[w].checkUser(un, pw));
+        }
+      </script>
+      <form id="felder" name="felder">
+        <p class="mittig">
+          Vorname:
+          <input type="text" id="vorname" name="vorname" value="" />
+          <br />
+          Nachname:
+          <input type="text" id="nachname" name="nachname" value="" />
+          <br />
+          Alter:
+          <input type="text" id="alter" name="alter" />
+          <br />
+          Weiblich?:
+          <input
+            type="checkbox"
+            id="weiblich"
+            name="weiblich"
+            value="weiblich"
+          />
+          <br />
+          Username:
+          <input type="text" id="username" name="username" value="" />
+          <br />
+          Passwort:
+          <input type="password" id="passwort" name="passwort" value="" />
+          <br />
+          <br />
+          <br />
+
+          <!-- Button zum Anlegen der User -->
+          <input type="reset" value="Zurücksetzen" />
+          <input
+            type="button"
+            id="abgabe"
+            name="abgabe"
+            value="Abgabe"
+            onclick="addUser()"
+          />
+          <br />
+          <br />
+          <!-- Button zum Testen der Funktionen -->
+          <input
+            type="button"
+            id="buttonAusgabe"
+            name="buttonAusgabe"
+            value="Ausgabe aller User"
+            onclick="ausgabeUser()"
+          />
+          <br />
+          <input
+            type="button"
+            id="alter"
+            name="alter"
+            value="Alter"
+            onclick="ausgabeAlter()"
+          />
+          <br />
+          <input
+            type="button"
+            id="name"
+            name="name"
+            value="Nachname ändern"
+            onclick="aendernNachname()"
+          />
+          <br />
+          <input
+            type="button"
+            id="weiblich"
+            name="weiblich"
+            value="Weiblich?"
+            onclick="ausgabeWeiblich()"
+          />
+          <br />
+          <input
+            type="button"
+            id="checkUser"
+            name="checkUser"
+            value="Check User"
+            onclick="pruefeUser()"
+          />
+        </p>
+      </form>
+      <div id="ausgabe"></div>
+    </div>
+  </body>
+</html>

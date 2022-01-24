@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<!-- Hier ist der Kopf des Dokuments -->
+  <head>
+    <meta charset="UTF-8">
+    <title>Vorlesung 8</title>
+    <link rel="stylesheet" href="../mystyle.css">
+  </head>
+
+<!-- Hier ist der Körper des Dokuments. Hier kommt der Inhalt rein -->
+  <body>
+    <div class="Kopfzeile">
+      <h2>Vorlesung 8 - 13.12.2021</h2>
+      <a href="../index.html"><button class="HomeButton">Zurück zur Startseite</button></a>
+    </div>
+
+    <div class="Inhalt">
+
+      <p class="blocksatz"> Die heutige Vorlesung war unsere letzte Vorlesung in Webprogrammierung im dritten Semester. Dabei haben wir uns mit dem Einsatz von AJAX in der Webentwicklung beschäftigt und dies sehr ausführlich in einer Übung praktisch umgesetzt.</p>
+      
+      <h3>Unterschied von Früher zu Heute</h3>
+      <p class="blocksatz"> Der Unterschied von früher zu heute liegt in AJAX und dem erstellen von asynchronen JavaScript Webanwendungen, die interaktiver und reaktionsschneller sind. AJAX bringt dabei den Vorteil mit sich, dass die Webanwendung schneller reagiert, was wiederum die Usability steigert. Früher, wie in 1999, füllte ein Nutzer ein HTML Formular aus, draufhin wurde eine Anfrage an den Server geschickt. Dieser beantwortete die Anfrage und schikte eine neue aktualisierte HTML-Seite an den Client zurück. Wie bereits erwähnt führte dies zu hohen Wartezeiten. Die Lösung für die hohe Wartezeit ist, dass die Anfrage an den Server von einer JavaScript Funktion übernommen wird. Dadurch gibt der Webserver nur die Daten zurück die er braucht und das Design wird nicht neu mitgeschickt, denn mit Hilfe von JavaScript aktualisiert sich die Webseite dynamisch und der Webserver braucht keine Informationen zum Design, sondern lediglich Informationen Daten und Dokumente die verändert werden sollen.</p>
+
+      <p class="blocksatz">Übersichtlich sieht das dabei dann so aus:</p>
+
+      <p>
+        <img width="800px" margin-left="10%" margin-right="10%" src="../Abbildungen/dynamische-webanw.jpeg" alt=" Aufbau einer dynamischen Webanwendung">
+      </p>
+
+      <h3>AJAX-Anwendungen</h3>
+      <p class="blocksatz">Wie im oberen Abschnitt bereits erläutert, sind die Anwendungen somit <b>dynamischer</b>, jedoch könnte man vermuten, dass immernoch Wartezeit auf den JavaScript-Code besteht. Dieses Problem löst AJAX dadurch, dass es <b>asynchron</b> ist. Dies ermöglicht es, dass während JavaScript eine Anfrage an den Server schickt, der Nutzer weiterhin Eingaben vornehmen oder Buttons klicken kann. Nachdem der Server die Anfrage bearbeitet und eine Antwort gesendet hat, aktualisiert sich dann der "betrofffene" Teil der Seite.</p>
+
+      <h4>AJAX</h4>
+      <p class="blocksatz">AJAX ermöglicht somit zusammengefasst die Kommunikation zu einem Webserver, um Daten laden oder übertragen zu können, ohne dass dabei das Dokument gewechselt werden musss.</p>
+
+      <h3>callback-Funktionen</h3>
+      <p class="blocksatz"> Die <em>callback functions</em> oder in deutsch Rückruffunktionen sind Funktionen die anderen Funktionen als Parameter übergeben werden. Vorzugsweise bearbeiten callback-Funktionen dabei das Ergebnis asynchroner Funktionen.</p>
+
+      <p class="blocksatz"> Der Einsatz von callback-Funktionen wird in einem konkreten Beispiel auf <a href="https://sebastianviereck.de/jquery-asynchroner-ajax-call-mit-callback-success-funktion/"> sebastianviereck.de</a> beschrieben und folgt im nächsten Abschnitt <b>Übung: Online Snowboard-Shop</b>.</p>
+
+      <h3>Übung: Online Snowboard-Shop</h3>
+      <p class="blocksatz">Den Einsatz von AJAX und die Verwendung von PHP haben wir und dabei in einem Beispiel für einen Online Snowboard-Shop genauer angeschaut. Dabei hatten wir keinen Webserver zur Ausführung parat, deshalb nur ein Stück Code der <em>boards.html</em> Datei: </p>
+
+      <p>
+        <img width="800px" margin-left="10%" margin-right="10%" src="../Abbildungen/boards.png" alt="boards.html Code">
+      </p>
+
+      <p class="blocksatz">
+        Im oberen Code ist gut zu erkennen, durch den Kommentar in Zeile 36, dass in Zeile 37 callback-Code steht. Hierbei wird innerhalb der Funktion <em>updateSeite()</em> die Funktion <em>responseText</em> aufgerufen. Außerdem wird innheralb der Funktion <em>updateSeite()</em> auch die Funktion <em>replaceText</em> in Zeile 41 und 50 aufgerufen. Diese Funktion ist in der JavaScript-Datei definiert. Folglich hier der Code der <em>text-utils.js</em> Datei:
+      </p>
+
+      <p>
+        <img width="500px" margin-left="10%" margin-right="10%" src="../Abbildungen/text-utils.png" alt="text-utils.js Code">
+      </p>
+
+      <p class="blocksatz">
+
+      </p>
+
+      <h4> Der PHP-Inhalt der heutigen Vorlesung wird nochmal in meinem <a href="../Vorlesungen/Vorlesung9.html">Vertiefungsthema</a> behandelt, weshalb er hier nicht nochmals erläutert wird.</h4>
+    </div>
+  </body>
+</html>
