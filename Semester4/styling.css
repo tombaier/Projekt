@@ -1,0 +1,35 @@
+html {
+    font-family: "Gotham", sans-serif;
+}
+
+body {
+    margin: 0px;
+}
+
+#head {
+    background-color: #e17055;
+    height: 120px;
+}
+
+#head a {
+    color: #FFFFFF;
+    font-size: 200%;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 70px;
+    margin-left: 15px;
+}
+
+#nav a {
+    width: 12.5%;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    color: #e17055;
+    border-top: solid 7px #fab1a0;
+    height: 30px;
+}
+
+#nav a:hover {
+    color: #fab1a0;
+}
