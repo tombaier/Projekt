@@ -24,5 +24,108 @@
             <a href="../react.html">Vertiefung</a>
         </div>
 
+        <h2> Entwicklung der Kommunikationssysteme </h2>
+
+        <div> Das erste Thema unseres Moduls des vierten Semesters ist die Entwicklung der Kommunikationssysteme über die Zeit. Dabei sprechen wir vorallem von der Entwicklung der <b>Client-Server-Kommunikation</b>. In den Anfängen bestand das Ethernet physisch aus <b>einem</b> Koax Kabel, über das alle Rechner miteinander in einem LAN verbunden waren. Dies ermöglichte es allen Rechnern Daten zu senden und zu empfangen. Die Umsetzung dabei war, dass ein Computer prüfen <em>(oder auch "lauschen")</em> musste, ob das Kabel frei ist, um etwas senden zu können. Falls ein Senden möglich ist, erhalten dann nach dem Senden alle Computer, die mit diesem Lan verbunden sind, die gesendeten Daten. Dies zeigt das größte Problem dieses Kommunikationsmodells: Es ist <b>keine Sendung an einen spezifischen Computer</b> möglich. Die einzige Möglichkeit herauszustellen für welchen Computer die Nachricht bestimmt ist, ist die MAC-Zieladresse, da diese individuell auf jeder Netzwerkkarte ist. </div>
+
+        <div> Ein weiteres Problem war es, dass <b>nur ein Kabel für alle Computer</b> verwendet wurde. Somit kommt es bei zwei zeitgleichen Sendungen zweier Computer zu einer Kollision. In Folge der Kollision konnte dann keiner der beiden Sendungen zugestellt werden. Die Lösung dieses Problems liegt in sogenannten <b>Bridges</b>. Bridges segmentieren die Systeme und können anhand der MAC-Zieladresse erkennen, in welchem Netzwerksegment der Empfänger einer Nachricht liegt und es an diesen gezielt weiterleiten. Während dieses Vorgangs führt die Bridge eine Forwaring-Adresstabelle, in die sie die Absenderadressen mit dem zugehörigen Quellport schreibt. Sendet eine Adresse dann für eine längere Zeitspanne keine Daten mehr, so wird sie aus der Liste entfernt, um die Aktuälität der Liste und Effizienz bereitzustellen.</div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture1/bridge.jpeg" alt="bridge">
+
+        <div> Heutzutage werden für diesen Anwendungsfall anstatt Bridges <b>Switches</b> verwendet. Diese bieten den Vorteil, dass man bei der Verwendung von Switches mehrere LANs verbinden lassen. Der Vorgang bleibt dabei ähnlich, denn auch Switches nutzen die MAC-Zieladresse, um durch die Mikrosegmentierung Kollsionen zu vermeiden. </div>
+
+        <h3> Kommunikationsmodell </h3>
+
+        <div> Client-Sever-Kommunikationsmodell beschreibt den Vorgang eines Austausches zwischen zwei Rechnern beziehungsweise einem (Web-)server. Eine Netwerkverbindung wird dabei mithilfe dieses <b>5er Tupels</b> beschrieben werden: </div>
+
+        <ul>
+            <li> Protokoll (TCP = Transmission Control Protocol) </li>
+            <li> Lokaler Host (IP = Internet Protocol) </li>
+            <li> Lokaler Prozess (Port) </li>
+            <li> Fremder Host (IP = Internet Protocol) </li>
+            <li> Fremder Prozess (Port) </li>
+        </ul>
+
+        <div> In diesem Falle gibt die IP Adresse den "betroffenen" Rechner an und der Port referenziert auf die der Verbindung zugehörigen Anwendung. Abhängig von der Anwendung kann zuätzlich serverseitig eine Datenbankabfrage stattfinden oder andere Anwednungssysteme genutzt werden. Auf Seite des Clients kommt es ebenfalls zur Nutung zuätzlicher Technologien wie zum Beispiel die Verwendung von JS und Frameworks wie jQuery oder Java Applets. Oder auch die Entwicklung von native Apps in beispielsweise SWIFT oder React Native. Eine weitere Technologie, die dabei auch nicht zu vergessen ist, ist das entwicklen von hybriden Apps und Webapplikaltionen. </div>
+
+        <h3> Java Applets </h3>
+
+        <div> </div>
+
+        <h2> Serverseitige Technologien </h2>
+
+        <div> </div>
+
+        <h3> Common Gateway Interface (CGI) </h3>
+
+        <div> </div>
+
+        <h3> Hypertext Protocol (PHP) </h3>
+
+        <div> </div>
+
+        <h3> Java Servlets & Java Server Pages (JSP) </h3>
+
+        <div> </div>
+
+        <h2> Speicherung von Objekten </h2>
+
+        <div> </div>
+
+        <h3> Textdateien </h3>
+
+        <div> </div>
+
+        <h2> Serialisierung & Deserialisierung </h2>
+
+        <div> </div>
+
+        <h3> Serialisierung </h3>
+
+        <div> </div>
+
+        <h3> Deserialisierung </h3>
+
+        <div> </div>
+
+        <h2> Übung 1 </h2>
+
+        <div> Unsere erste Übung bezieht sich auf das Thema Serialisierung, das wir in der heutigen Vorlesung besprochen haben. Dabei sind die Klassen <em>Spielfigur</em> und <em>SpielSicherungsTest</em> gegeben. Dazu sollen wir eine neue Klasse namens <em>Team</em> anlegen. Das Team soll dabei, analog zu den bereitgestellten Klassen, die Objektreferenz löschen und das Objekt neu laden. Der Quellcode zu dieser Übung sieht dabei so aus:</div>
+
+        <img class="img-center" src="../Assets/Exercises/Exercise1/spielfigur.png" alt="spielfigur.java">
+
+        <img class="img-center" src="../Assets/Exercises/Exercise1/spielsicherungstest.png" alt="spielsicherungstest.java">
+
+        <img class="img-center" src="../Assets/Exercises/Exercise1/team.png" alt="team.java">
+
+        <h2> String in eine .txt-Datei schreiben </h2>
+
+        <div></div>
+
+        <h3> java.io.File </h3>
+
+        <div></div>
+
+        <h3> Puffer </h3>
+
+        <div></div>
+
+        <h2> Aus einer .txt-Datei lesen </h2>
+
+        <div></div>
+
+        <h4> Reader </h4>
+
+        <div></div>
+
+        <h4> Writer </h4>
+
+        <div></div>
+
+        <h2> Übung 2 </h2>
+
+        <div> In der zweiten Übung der heutigen Vorlesung sollen wir eine .txt-Datei anlegen (in meinem Beispiel <em>lesen.txt</em>) und dazu ein passendes Java-Programm verfassen, welches die Datei liest und eine Kopie der Datei (namens <em>lesen_kopie.txt</em>) in das selbe Verzeichnis schreibt. Mein Java-Programm, das die Aufgabe erüllt, sieht folgendermaßen aus: </div>
+
+        <img class="img-center" src="../Assets/Exercises/Exercise2/textelesen.png" alt="textelesen.java">
     </body>
 </html>

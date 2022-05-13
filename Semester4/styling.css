@@ -6,6 +6,30 @@ body {
     margin: 0px;
 }
 
+h2 {
+    color: #e17055;
+	font-size: 4vw;
+    margin-left: 10px;
+}
+
+h3 {
+    color: #e17055;
+	font-size: 2vw;
+    margin-left: 10px;
+}
+
+h4 {
+    color: #e17055;
+	font-size: 1.5vw;
+    margin-left: 10px;
+}
+
+div {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: justify;
+}
+
 #head {
     background-color: #e17055;
     height: 120px;
@@ -32,4 +56,11 @@ body {
 
 #nav a:hover {
     color: #fab1a0;
+}
+
+.img-center {
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    margin-top: 5px;
 }

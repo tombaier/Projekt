@@ -24,5 +24,40 @@
             <a href="../react.html">Vertiefung</a>
         </div>
 
+        <h2> Netzwerkprogrammierung über Sockets </h2>
+
+        <div></div>
+
+        <h3> Client </h3>
+
+        <div></div>
+
+        <h4> 1. Verbindung zum Server aufbauen </h4>
+
+        <div></div>
+
+        <h4> 2. Nachricht an Server senden </h4>
+
+        <div></div>
+
+        <h4> 3. Nachricht vom Server Empfangen & lesen </h4>
+
+        <div></div>
+
+        <h2> Übung 3 </h2>
+
+        <div>In der dritten Übung sollen wir die Kommunikation zwischen einem Client und einem Server programmieren. Die Klassen dazu heißen <em>TippDesTagesClient</em> und <em>TippDesTagesServer</em>. Die Quellcodes dazu sehen wie folgt aus: </div>
+
+        <img class="img-center" src="../Assets/Exercises/Exercise3/tippdestagesclient.png" alt="tippdestagesclient.java">
+
+        <div> Im Quellcode des Clients erzeugen wir in der Main Methode eine neue Client Instanz und starten die los()-Methode in dieser. Dort wird ein Socket erstellt, der den Port 4242 verwendet. Zudem werden ein InputStreamReader und BufferedReader erzeugt, die mit dem InputStream des Sockets (folgt) connected werden. Zusätzlich erzeugen wir eine endlose while-Schleife, dabei werden erhaltenen Nachrichten in der Konsole ausgegeben. </div>
+
+        <img class="img-center" src="../Assets/Exercises/Exercise3/tippdestagesserver.png" alt="tippdestagesserver.java">
+
+        <div> Zu dem Client benötigen wir das Gegenstück - den Server. Dabei erstellen wir analog zum Client in der Main Methode des Servers eine neue Instanz unseres Servers und starten ebenfalls die los()-Methode. Die los()-Methode erstellt einen neuen ServerSocket am Port 4242, der wie oben geschildert vom Client verwendet wird. Danach wechselt er in eine endlose while-Schleife, in der bei jeder Anfrage eines Clients dieser zunächst akzeptiert werden muss. Danach wird ein PrintWriter erstellt, dessen Output der OutputStream ist. Dabei wird eine zufällige Anzahl an Tipps des Tages versendet. </div>
+        <br/>
+        <br/>
+        <div> Wichtig ist bei der Ausführung darauf zu achten, dass der Server gestartet ist, damit der Client überhaupt die Möglichkeit erlangt eine Anfrage an den Port 4242 zu senden.</div>
+
     </body>
 </html>
