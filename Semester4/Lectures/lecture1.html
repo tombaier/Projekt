@@ -27,7 +27,8 @@
         <h2> Entwicklung der Kommunikationssysteme </h2>
 
         <div> Das erste Thema unseres Moduls des vierten Semesters ist die Entwicklung der Kommunikationssysteme über die Zeit. Dabei sprechen wir vorallem von der Entwicklung der <b>Client-Server-Kommunikation</b>. In den Anfängen bestand das Ethernet physisch aus <b>einem</b> Koax Kabel, über das alle Rechner miteinander in einem LAN verbunden waren. Dies ermöglichte es allen Rechnern Daten zu senden und zu empfangen. Die Umsetzung dabei war, dass ein Computer prüfen <em>(oder auch "lauschen")</em> musste, ob das Kabel frei ist, um etwas senden zu können. Falls ein Senden möglich ist, erhalten dann nach dem Senden alle Computer, die mit diesem Lan verbunden sind, die gesendeten Daten. Dies zeigt das größte Problem dieses Kommunikationsmodells: Es ist <b>keine Sendung an einen spezifischen Computer</b> möglich. Die einzige Möglichkeit herauszustellen für welchen Computer die Nachricht bestimmt ist, ist die MAC-Zieladresse, da diese individuell auf jeder Netzwerkkarte ist. </div>
-
+        <br>
+        <br>
         <div> Ein weiteres Problem war es, dass <b>nur ein Kabel für alle Computer</b> verwendet wurde. Somit kommt es bei zwei zeitgleichen Sendungen zweier Computer zu einer Kollision. In Folge der Kollision konnte dann keiner der beiden Sendungen zugestellt werden. Die Lösung dieses Problems liegt in sogenannten <b>Bridges</b>. Bridges segmentieren die Systeme und können anhand der MAC-Zieladresse erkennen, in welchem Netzwerksegment der Empfänger einer Nachricht liegt und es an diesen gezielt weiterleiten. Während dieses Vorgangs führt die Bridge eine Forwaring-Adresstabelle, in die sie die Absenderadressen mit dem zugehörigen Quellport schreibt. Sendet eine Adresse dann für eine längere Zeitspanne keine Daten mehr, so wird sie aus der Liste entfernt, um die Aktuälität der Liste und Effizienz bereitzustellen.</div>
 
         <img class="img-center" src="../Assets/Graphics/Lecture1/bridge.jpeg" alt="bridge">
@@ -50,43 +51,114 @@
 
         <h3> Java Applets </h3>
 
-        <div> </div>
+        <div> Java Applets ermöglichen die Ausführung von Java Code im Webbrowser des Clients. Dabei ist eine direkte Interaktion mit dem Nutzer möglich, ohne Daten zum Server senden zu müssen, nachdem sie einmal geladen wurden. Diese Arbeitsweise bezeichnet man als <b>autark</b>. Java Apples haben in den meisten Fällen ein Graphical User Interface (GUI) um die Interkation mit dem Nutzer zu ermöglichen. Die Kommunikation sieht also folgendermaßen aus: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture1/javaapplets.jpeg" alt="javaapplets">
+
+        <div> Da Java Applets lokaal ausgeführt werden, bringen sie einige Risiken mit sich. Dabei gibt es verschiedene Sicherheitsvorkehrungen, die den Applets unterliegen, um diese Risiken vorzubeugen: </div>
+
+        <ul>
+            <li> Keine Zeiger </li>
+            <li> Typsicherheit zur Laufzeit </li>
+            <li> Echte Feldgrenzen mit Überprüfung </li>
+            <li> Byte Code Verifier kann geladenen Byte Code verifizieren </li>
+            <li> Kein Zugriff auf Daten </li>
+            <li> Kommunikation nur mit dem Ursprungsrechner des Applets </li>
+            <li> Bestimmte Systemparameter können nicht ausgelesen werden </li>
+            <li> Applet-Fenster sehen anders aus als normale Fenster </li>
+        </ul>
+
+        <div> Auch trotz der ganzen Sicherheitsvorkehrungen kommen Java Applets heutzutage nicht mehr zum Einsatz und sind von den meisten Broswern ausgeschaltet, da sie als trotz der Vorkehrungen als unsicher für die heutigen Anforderungen gelten. </div>
+
 
         <h2> Serverseitige Technologien </h2>
 
-        <div> </div>
+        <div> Die Grundlage serverseitiger Technologien ist die Weitergabe bestimmter Aufgaben etc. an (eine) externe Komponente(n). Der HTTP (Hypertext Transfer Protocol) Request wird dabei ,durch einen indirekten Request durch die URL (Uniform Resource Locator), weitergeleitet. Die externe(n) Komponente(n) regaiert / erzeugt dabei auf / mit einem Response. Die folgende Grafik veranschaulicht dabei die Position des (Web-)Servers: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture1/servertech.jpeg" alt="servertech">
+
+        <div> Die folgenden drei Kapitel: <em>"Common Gateway Interface (CGI)", "Hypertext Protocol (PHP)" und "Java Servlets & Java Server Pages (JSP)" </em> erklären drei serverseitige Technologien aus der Vergangenheit bis Heute detaillierter. </div>
 
         <h3> Common Gateway Interface (CGI) </h3>
 
-        <div> </div>
+        <div> Das CGI wurde 1994/95 entwickelt, da der Abruf statischer Dokumente nicht mehr dem Anspruch der Zeit ausreichte. Mit dem CGI entsand die Möglichkeit Inhalte von Datenbanken anzubinden und Daten, Informationen verschiedener Arten, Bilder und Ähnliches hochzuladen. Um dies zu ermöglichen dürfen die URLs nun nicht mehr auf statische Dokumente, sondern auf Programmme (Applications) führen. Dabei startet und beendet der Webserver die Programme. Zum Datenautausch zwischen Server und CGI Prozzes kommen dabei sogenannte Pipes und Umgebungsvariablen zum Einsatz. </div>
+        <br>
+        <br>
+        <div> CGIs können dabei mit allen Programmiersprachen erstellt werden, was eine universelle Anwendung dieser Technologie ermöglicht. Im Gegensatz entseteht eine Einschränkung daraus, dass für jeden neuen Aufruf ein neue CGI-URL und ein dazugehöriger Prozess gestartet werden muss. Außerdem erhält ein CGI-Programm nur die Daten und Informationen, die vom Server durchgelassen werden. Der wohl größte Kritikpunkt, der ebenfalls dafür sorgt, dass CGI Programme heutzutage nicht mehr verwendet werden, ist, dass es anonymen Anwendern möglich ist Programme auf dem Server auszuführen und somit Maleware zu verbreiten und das Programm zu beeinflussen oder auch zu beeinträchtigen. Somit scheitert die CGI Technologie schlichtweg an der Sicherheit für den Nuter und das System.</div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture1/cgi.jpeg" alt="cgi">
 
         <h3> Hypertext Protocol (PHP) </h3>
 
-        <div> </div>
+        <div> Die Skriptsprache PHP kann direkt in HTML Code eingebunden werden. PHP wird dabei von den meisten World Wide Web (WWW)-Servern unterstützt und ist unter Windows, Linux und MacOS verfügbar. Somit ist es auf allen großen OS (Operating Systems) verfügbar und nutzbar. Drei große Vorteile dieser Technologie sind, dass die Sprache leicht erlernbar ist, sie, wie erwähnt, direkt in HTML Code integriert werden kann und einen großen Funktionsumfang bereitstellt. </div>
+        <br>
+        <br>
+        <div> Ein PHP-Request beginnt mit dem Anforderungsbefehl für eine Webseite seitens des Nuters (dies passiert über dem Browser auf dem Webserver). Wenn die Datei dabei auf <em>.php</em>, <em>.php3</em> oder <em>.phtml</em> endet, wird die Anfrage des Nutzers / Clients an PHP-Server weitergeleitet, der die erwarteten / notwendigen Daten aus dem , zum Beispiel, MySQL-Server liest. PHP agiert dabei als Bindeglied zwischen dem MySQL-Server und dem HTML Code und schreibt die entnommenen Daten in den HTML Code, um sie für den Nutzern sichtbar / nutzbar zu machen. Die Daten in / mit dem HTML Code werden dann über den Web-Server an den Browser weitergegeben.</div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture1/php1.jpeg" alt="php1">
+
+        <img class="img-center" src="../Assets/Graphics/Lecture1/php2.jpeg" alt="php2">
+
+        <div> Die PHP-Funktion <em>phpinfo()</em> zeigt alle Umgebungsvariablen an. Die wichtigsten sind dabei: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture1/php3.jpeg" alt="php3">
 
         <h3> Java Servlets & Java Server Pages (JSP) </h3>
 
-        <div> </div>
+        <div> Die Java Servlets basieren auf CGI, sie sind somit eine Erweiterung der zuvor kennengelernten Technologie. Sie bauen, wie der Name verrät, auf der Programmiersprache Java auf. Da dies Bestandteil unserer beiden Programmierungsmodule war, führe ich diesen Punkt nicht weiter aus. Java Servelts werden über die URL angesprochen und sind aus Codesicht zustandslose Java Klassen. Der Web-Server instanziiert die Klassen, führt sie aus und liefert ihnen den notwendigen Inhalt zurück. </div>
+        <br>
+        <br>
+        <div> JSP stellen dabei Erweiterungen des Java Servelts da. Durch diese wird die Erstellung einfacher Websiten, die sowohl statischen als auch dynamischen Inhalt besitzen, möglich.</div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture1/servlets.jpeg" alt="servlets">
 
         <h2> Speicherung von Objekten </h2>
 
-        <div> </div>
+        <div> Objekte oder neu erarbeitet Zustände von vorhandenen Objekten müssen gespeichert werden, damit später darauf zugegriffen werden kann. Zwei Möglichkeiten sind dabei die Verwendung von Serialisierung und Textdateien. Diese beiden Verfahren ermöglichen es Zustände zu speichern, um später darauf zugreifen zu können. </div>
 
         <h3> Textdateien </h3>
 
-        <div> </div>
+        <div> Damit auf eine Datei von einem anderen Programm aus zugegriffen werden kann, müssen die Daten in eine <em>.txt</em>-Datei mit Feldtrennzeichen geschrieben werden. Dafür können unterschiedliche Techniken verwendet werden, wie zum Beispiel in Byte-Form oder normalen Wörtern. </div>
 
         <h2> Serialisierung & Deserialisierung </h2>
 
-        <div> </div>
+        <div> Die Konvertierung eines Objekts in einen Bytestream bezeichnet man als Serialisierung. Den Gegenvorgang, um ein serialisiertes Objekt wieder auslesen zu können, nennt man Deserialisierung.</div>
 
         <h3> Serialisierung </h3>
 
-        <div> </div>
+        <div> Durch das Konvertieren eines Objektes in einen Bytestream, kann das Objekt gespeichert werden oder in eine Datenbank oder Datei übertragen werden. In diesem Vorgang fließen die Datenströme, die als <b>Streams</b> bezeichnet werden, des Ausgangsobjektes auf dem Heapspeicher zu der Datei. In dieser werden die Werte der Instanzvariablen gespeichert.
+        </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture1/serialisierung1.jpeg" alt="serialisierung1">
+
+        <div> Streams können in Anschlussströme und Verkettungsströme unterteilt werden. Anschlussströme stellen eine Verbindung zu einer Quelle oder einem Zielort (z.B. Dateien oder Sockets) dar. Verkettungsströme können hingegen selbst keine Verbindung zu einer Quelle oder einem Zielort herstellen. Auf Verkettungsströme kann man nur Methoden aufrufen, weshalb sie immer in Verbindung mit Anschlussströmen stehen müssen.</div>
+        <br>
+        <br>
+        <div> Ein <em>FileOutputStream</em> stellt einen Anschlussstrom und ein <em> ObjectOutputStream</em> einen Verkettungsstrom dar. Ein Vorteil dabei sind die vielen Kombinationsmöglichkeiten die das Konstrukt der flexibel machen. Zudem ist eine Objektserialisierung in vier Schritten möglich: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture1/serialisierung2.png" alt="serialisierung2">
+
+        <div>  Wenn die Instanzvariablen eines zu serialisierenden Objektes nicht nur aus primitiven Datentypen bestehen, sondern auch aus Referenzen auf andere Objekte müssen die einzelnen Objekte ebenfalls serialisiert werden. Bei der Serialisierung wird der gesamte Objektgraph automatisch gespeichert. Serialisierte Objekte haben die Werte ihrer Instanzvariablen und weitere Informationen gespeichert, die für die Wiederherstellung des spezifischen Objektes unabdingbar sind. Dies bringt die Möglichkeit, dass ein identisches Objekt die Werte aufnehmen und das Objekt zurück auf den Heap bringen kann. </div>
+        <br>
+        <br>
+        <div> <em>implements Serializable</em>, ist ein Kennzeichen, dass es sich um eine Serialisierung handelt. Dieses Kennzeichen muss immer in der Klassendefinition stehen. Damit wird definiert, dass Objekte diesen Types serialisiert werden dürfen. Dies muss ebenfalls, wie oben erläutert, passieren, wenn ein Referenz auf ein anders Objekt besteht. Dabei muss das <em>java.io.*</em> Paket importiert werden, da <em>Serializable</em> ein Teil des Paketes ist. Das <em>Serializable</em> ist dabei ein Marker-/Tag-Interface, da es keine zu implemntierende Methoden enthält. Wenn eine Superklasse eines Objekts <em>Serializable</em> ist, dann sind ebenfalls ihre Subklassen <em>Serializable</em>. </div>
+        <br>
+        <br>
+        <div> Damit alle Informationen eines Objektes gespeichert werden können, werden refernzierte Objekte im Objektgraph gespeichert. Somit muss nur noch das eigentliche Objekt serialisiert werden. Mit dem Schlüsselwort <em>transient</em> können Instanzvariablen aus dem Obejekt beim Serialisierungprozess übersprungen werden. </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture1/serialisierung3.png" alt="serialisierung3">
 
         <h3> Deserialisierung </h3>
 
-        <div> </div>
+        <div> Die Deserialisierung nutzt man zur Auslesung eines serialisierten Objektes, dabei wird aus einer bestehenden Datei ein neues Objekt erzeugt, das den gleichen Zustand hat, den das serialisierte Objekt zum Zeitpunkt der Serialisierung hatte. Ein einziger Unterschied liegt hierbei in den tranisenten Varibalen, da diese in diesem Falle von Objektreferennzen mit <em>null</em> und im Falle vin primitiven Datentypen mit <em>default</em>-Werten zurückgegeben werden. </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture1/deserialisierung1.jpeg" alt="deserialisierung1">
+
+        <div> <em>FileInputStreams</em> und <em>ObjectOutputStreams</em> sind essentielle Bestandteile der Deserialisierung. Es ergibt sich ein Prozess aus 5 Schritten: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture1/deserialisierung2.png" alt="deserialisierung2">
+
+        <div> Das Objekt wird also aus dem Storm gelesen und daraufhin klassifiziert. Im Falle, dass die Java Virtual Machine (JVM) keine Klasse finden oder laden kann, wird eine Exception im ObjectOutputStream ausgeschmissen. Eine Exception wird ebenfalls ausgelöst, wenn versucht wird mehr Objekte als vorhanden sind auszulesen. Zur Lösung dieses Problemes kommen häufig Try-Catch-Blöcke zum Einsatz. Die Auslesung mehrerer Objekte folgt dem <em>first in first out (FIFO)</em> -Prinzip.</div>
 
         <h2> Übung 1 </h2>
 
@@ -98,29 +170,56 @@
 
         <img class="img-center" src="../Assets/Exercises/Exercise1/team.png" alt="team.java">
 
-        <h2> String in eine .txt-Datei schreiben </h2>
+        <h3> String in eine <em>.txt</em>-Datei schreiben </h3>
 
-        <div></div>
+        <div> Das Schreiben eines String in eine <em>.txt</em>-Datei funktioniert ähnlich wie das Schreiben eines Objektes. Dies ermöglicht den Datenautausch eines Java-Programmes mit einem Nicht-Java-Programm. Die Instanzvariablen werden dabei in der <em>.txt</em>-Datei, die das Nicht-Java-Programm öffnen kann, festgehalten. Dabei kommt der FileWriter anstelle des ObjectOutputStreams zum Einsatz. Wird auf dem FileWriter die Methode <em>write()</em> aufgerufen, so schreibt dieser die Daten in die angegebene Datei. Der folgende Code veranschaulicht dies: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture1/filewriter.png" alt="filewriter">
 
         <h3> java.io.File </h3>
 
-        <div></div>
+        <div> Die Klasse <em>java.io.File</em> repräsentiert eine Datei, jedoch nicht den Inhalt, auf einem Datenträger. Sie ermöglicht die Weitergabe des Pfades der Datei. Sie kann, da die den Inhalt nicht kennt, auch nicht "schreiben" oder "lesen". Sie kann aber den Dateipfad prüfen: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture1/javaiofile.png" alt="javaiofile">
+
+        <div> Wie der Code oben zeigt, stellt die Klasse <em>java.io.File</em> einige Mtehode bereit, die zum Beispiel das Erzeugen, Überprüfen oder Löschen eines File-Objektes ermöglichen. </div>
 
         <h3> Puffer </h3>
 
-        <div></div>
+        <div> Bei dem Schreiben von Strings in eine Datei auf der Festplatte kann es zu Engpässen bzw. Staus kommen, da jeder String einzeln auf die Datei transportiert werden müsste. Um dieses Problem zu vermeiden, werden Puffer eingebaut, die als Zwischenspeicher dienen. Der Puffer sammelt die Strings (Maximal bis er voll ist) und gibt sie dann gebündelt an den FileWriter weiter. Die Methode <em>flush()</em> kann dabei verwendet werden, um die Daten im Puffer abzusenden, bevor dieser voll ist. </div>
 
-        <h2> Aus einer .txt-Datei lesen </h2>
+        <img class="img-center" src="../Assets/Graphics/Lecture1/puffer.jpeg" alt="puffer">
 
-        <div></div>
+        <h3> Aus einer .txt-Datei lesen </h3>
+
+        <div> Zum Auslesen von Text aus Dateien zu lesen werden FileReader und BufferedReader verwendet. Zur anschließenden Ausgabe des Textes wird eine <em>while</em>-Schleife verwendet, die abgebrochen wird, wenn der gesamte Text ausgegeben wurde. Dabei funktioniert der Vorgang wie folgt: Jede Zeile wird einzeln in einen String eingelesen und mit <em>Null</em> verglichen. Wenn die Zeile ungleich <em>Null</em> ist, so wird sie ausgegeben. Fall eine Zeile / ein String gleich <em>Null</em> ist, so wird die <em>while</em>-Schleife beendet.</div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture1/txtlesen.png" alt="txtlesen">
 
         <h4> Reader </h4>
 
-        <div></div>
+        <div>Im Folgenden werden die Methoden der Klasse Reader. Im Rahmen der Vorlesung haben wir uns noch Weitere angeschaut, die hier nicht gelistet sind, diese können bei Bedarf in der Dokumentation nachgeschaut werden. Für die Eingabe über Character-Streams stellt die Klasse Reader folgende Methoden: </div>
+
+        <ul>
+            <li><em>public abstract int read()</em>: Liefert das nächste Zeichen aus dem Reader-Objekt als Integer-Wert</li>
+            <li><em>public int read(char[] c)</em>: Füllt das Feld mit Zeichen aus dem Reader-Objekt und liefert die Anzahl der gelesenen Zeichen zurück</li>
+            <li><em>public int read(char[] c, int off, int n)</em>: Füllt das Feld ab Index of mit den nächsten n Zeichen aus dem Reader-Objekt und liefert die Anzahl der gelesenen Zeichen zurück</li>
+            <li><em>public void close()</em>: Schließt den Strom</li>
+        </ul>
 
         <h4> Writer </h4>
 
-        <div></div>
+        <div>Zur Ausgabe über Character Streams stellt die Klasse Writer folgende Methoden bereit:</div>
+
+        <ul>
+            <li><em>public abstract void write(int c)</em>: Schreibt das Zeichen c in das Writer-Objekt</li>
+            <li><em>public void write(char[] c)</em>: Schreibt, die im von c referenzierten Feld gespeicherten, Zeichen in das Writer-Objekt</li>
+            <li><em>public void write(char[] c, int off, int n)</em>: Schreibt, die im von c referenzierten Feld gespeicherten, n Bytes ab Index of in das Writer-Objekt</li>
+            <li><em>public void write(String s)</em>: Schreibt, die im Strings gespeicherten, Zeichen in das Writer-Objekt</li>
+            <li><em>public void write(String s, int off, int n)</em>: Schreibt, die im String s gespeicherten, n Zeichen ab Index of in das Writer-Objekt</li>
+        </ul>
+
+        <div>Hierbei gilt ebefalls, dass weiter Writer und Informationen aus der Dokumentation entnommen werden können.</div>
 
         <h2> Übung 2 </h2>
 

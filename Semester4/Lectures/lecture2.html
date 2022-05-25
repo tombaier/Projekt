@@ -26,27 +26,50 @@
 
         <h2> Netzwerkprogrammierung über Sockets </h2>
 
-        <div></div>
+        <div> Das heutige Thema ist Netzwerkprogrammierung über Sockets und Threads. Dabei werden wir Java nutzen, um eine Verbindung zur Außenwelt aufbauen. Das Senden und Empfangen von Informationen und Daten ist eine einfahce Eingabe bzw. Ausgabe, in Verbindung mit einem Verbindungsstrom. Für diesen Zweck existieren die Klassen der <em>java.net</em>-Bibliothek. Diese kümmern sich in diesem Prozess um alle low-level Netzwerkdetails. Zunächst haben wir uns mit der Transmission Control Protocol (TCP) Socket Kommunikation beschäftigt. Im speziellen haben wir dabei ein CHatprogramm mit einem Server und mehreren Clients betrachtet. Eine Bedingung dabei ist, dass jeder Client den Server kennt und der Server alle Clients kennt.</div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture2/netzwerkprogrammierung.jpeg" alt="netzwerkprogrammierung">
+
+        <div> Die obige Abbildung beschreibt wie Client und Server miteinander interagieren. </div>
 
         <h3> Client </h3>
 
-        <div></div>
+        <div> Für das Funktionieren des Clients müssen drei Punkte gewährleistet werden. <b>Punkt 1</b> ist dabei: Wie kann eine Verbindung zum Server aufgebaut werden? <b>Punkt 2</b>: Wie können Nachrichten an den Server gesendet werden? <b>Punkt 3</b>: Wie können Nachrichten vom Serer empfangen und gelesen werden? Umgangssprachlich lassen sich die drei Punkte folgendermaßen zusammenfassen: Es muss eine Verbidnung zwischen den CLients und dem Server bestehen, die es ermöglichen, dass Nachrichten von einem Client über den Server zu einem anderen Client weitergegeben werden können.</div>
 
-        <h4> 1. Verbindung zum Server aufbauen </h4>
+        <h4> Punkt 1: Verbindung zum Server aufbauen </h4>
 
-        <div></div>
+        <div> Die Netzwerkvebindung kann mithilfe eines Sockets hergestellt werden. Eine grundlegende Voraussetzung für die Verbidnung ist dabei, dass beide Softwareteile einander kennen müssen und den Kommunikationsweg kennen müssen. Diese benötigten Informationen liefern die IP-Adresse und die TCP-Portnummer. Dabei bestimmt die IP-Adresse die exakte Location des Empfängers, in desem Falle die des Servers, und die TCP-Portnummer beschreibt die logische Verbindung mit einer gabnz bestimmten Software des Servers. Wichtig ist dabei, auch für die spätere Anwendungsaufgabe, dass die Ports 0-1023 für verschiedene Dienste reserviert sind und deshalb für die Eigennutzung nicht verwednet werden sollten. Ein Beispiel dafür ist, dass der Internet-Webserver über den Port 80 läuft. </div>
+        <br/>
+        <br/>
+        <div> Ein Server besteht aus 65536 Ports und es bleiben dabei die registrierten Ports 1024-49151 für die Eigennutzung übrig. Die Portnummern beschreiben dabei mit welcher Anwendung ein Client eine Verbindung zum Sever erstellen möchte. Dies ist dabei sehr wichtig, da Anwendungen verschiedene Protokolle haben. Ein Beispiel dafür ist, dass ein Mailserver, ohne die Angabe eines Portes, einen HTTP-Request nicht anlysieren und verarbeiten könnte. </div>
 
-        <h4> 2. Nachricht an Server senden </h4>
+        <h4> Punkt 2: Nachricht an Server senden </h4>
 
-        <div></div>
+        <div> Sockets finden ihre Verwendung auch wenn Nachrichten an den Server gesendet werden sollen. Mihilfe der Klasse <em>PrintWriter</em> und den Methoden <em>print()</em> und <em>println()</em> können Informationen Line für Line ausgegeben werden. </div>
 
-        <h4> 3. Nachricht vom Server Empfangen & lesen </h4>
+        <img class="img-center" src="../Assets/Graphics/Lecture2/punkt2.png" alt="punkt2">
 
-        <div></div>
+        <div> Mithilfe des obigen Codes kann von dem Client über den <em>PrintWriter</em>, <em>OutputStream</em> und den Ausgabestream des Sockets eine Nachricht an das Chat-Programm des Server gesendet werden. </div>
+
+        <h4> Punkt 3: Nachricht vom Server Empfangen & lesen </h4>
+
+        <div> Durch Streams können Daten daraufhin von anderen Clients empfangen und gelesen werden. Dabei kommt zum Beispiel der <em>BufferedReader</em> zum Einsatz. Diesem ist es gleichgültig, ob der Verbindungsstrom mit einer Datei oder einem Socket verbunden ist: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture2/punkt3-1.png" alt="punkt3-1">
+
+        <img class="img-center" src="../Assets/Graphics/Lecture2/punkt3-2.jpeg" alt="punkt3-2">
+
+        <div> Die Grafik oben zeigt dabei, dass ein Strom / Stream vom Server bis zum Client ensteht, der, durch diesen Stream, die Möglichkeit hat Daten und Informationen zu empfangen und lesen.</div>
+
+        <h3> Server </h3>
+
+        <div> Serverseitig wird um eine Server-Anwendung zu schreiben ein ServerSocket und ein Socket benötigt. Der ServerSocket wartet auf Client-Anfragen und der Socket ermöglicht in Verbindung dann die Kommunikation mit dem Client: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture2/server.png" alt="server">
 
         <h2> Übung 3 </h2>
 
-        <div>In der dritten Übung sollen wir die Kommunikation zwischen einem Client und einem Server programmieren. Die Klassen dazu heißen <em>TippDesTagesClient</em> und <em>TippDesTagesServer</em>. Die Quellcodes dazu sehen wie folgt aus: </div>
+        <div>In der dritten Übung sollen wir die Kommunikation zwischen einem Client und einem Server programmieren, wie Oben in der Theorie erklärt. Die Klassen dazu heißen <em>TippDesTagesClient</em> und <em>TippDesTagesServer</em>. Die Quellcodes dazu sehen wie folgt aus: </div>
 
         <img class="img-center" src="../Assets/Exercises/Exercise3/tippdestagesclient.png" alt="tippdestagesclient.java">
 
@@ -55,8 +78,6 @@
         <img class="img-center" src="../Assets/Exercises/Exercise3/tippdestagesserver.png" alt="tippdestagesserver.java">
 
         <div> Zu dem Client benötigen wir das Gegenstück - den Server. Dabei erstellen wir analog zum Client in der Main Methode des Servers eine neue Instanz unseres Servers und starten ebenfalls die los()-Methode. Die los()-Methode erstellt einen neuen ServerSocket am Port 4242, der wie oben geschildert vom Client verwendet wird. Danach wechselt er in eine endlose while-Schleife, in der bei jeder Anfrage eines Clients dieser zunächst akzeptiert werden muss. Danach wird ein PrintWriter erstellt, dessen Output der OutputStream ist. Dabei wird eine zufällige Anzahl an Tipps des Tages versendet. </div>
-        <br/>
-        <br/>
         <div> Wichtig ist bei der Ausführung darauf zu achten, dass der Server gestartet ist, damit der Client überhaupt die Möglichkeit erlangt eine Anfrage an den Port 4242 zu senden.</div>
 
     </body>

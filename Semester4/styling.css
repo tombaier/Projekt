@@ -9,24 +9,24 @@ body {
 h2 {
     color: #e17055;
 	font-size: 4vw;
-    margin-left: 10px;
+    margin-left: 30px;
 }
 
 h3 {
     color: #e17055;
 	font-size: 2vw;
-    margin-left: 10px;
+    margin-left: 30px;
 }
 
 h4 {
     color: #e17055;
 	font-size: 1.5vw;
-    margin-left: 10px;
+    margin-left: 30px;
 }
 
 div {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
     text-align: justify;
 }
 
@@ -62,5 +62,6 @@ div {
     width: 50%;
     height: 50%;
     margin-left: 25%;
-    margin-top: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
