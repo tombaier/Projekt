@@ -24,7 +24,7 @@
             <a href="../react.html">Vertiefung</a>
         </div>
 
-        <h2> Entwicklung der Kommunikationssysteme </h2>
+        <h3> Entwicklung der Kommunikationssysteme </h3>
 
         <div> Das erste Thema unseres Moduls des vierten Semesters ist die Entwicklung der Kommunikationssysteme über die Zeit. Dabei sprechen wir vorallem von der Entwicklung der <b>Client-Server-Kommunikation</b>. In den Anfängen bestand das Ethernet physisch aus <b>einem</b> Koax Kabel, über das alle Rechner miteinander in einem LAN verbunden waren. Dies ermöglichte es allen Rechnern Daten zu senden und zu empfangen. Die Umsetzung dabei war, dass ein Computer prüfen <em>(oder auch "lauschen")</em> musste, ob das Kabel frei ist, um etwas senden zu können. Falls ein Senden möglich ist, erhalten dann nach dem Senden alle Computer, die mit diesem Lan verbunden sind, die gesendeten Daten. Dies zeigt das größte Problem dieses Kommunikationsmodells: Es ist <b>keine Sendung an einen spezifischen Computer</b> möglich. Die einzige Möglichkeit herauszustellen für welchen Computer die Nachricht bestimmt ist, ist die MAC-Zieladresse, da diese individuell auf jeder Netzwerkkarte ist. </div>
         <br>
@@ -39,13 +39,15 @@
 
         <div> Client-Sever-Kommunikationsmodell beschreibt den Vorgang eines Austausches zwischen zwei Rechnern beziehungsweise einem (Web-)server. Eine Netwerkverbindung wird dabei mithilfe dieses <b>5er Tupels</b> beschrieben werden: </div>
 
-        <ul>
-            <li> Protokoll (TCP = Transmission Control Protocol) </li>
-            <li> Lokaler Host (IP = Internet Protocol) </li>
-            <li> Lokaler Prozess (Port) </li>
-            <li> Fremder Host (IP = Internet Protocol) </li>
-            <li> Fremder Prozess (Port) </li>
-        </ul>
+        <div>
+            <ul>
+                <li> Protokoll (TCP = Transmission Control Protocol) </li>
+                <li> Lokaler Host (IP = Internet Protocol) </li>
+                <li> Lokaler Prozess (Port) </li>
+                <li> Fremder Host (IP = Internet Protocol) </li>
+                <li> Fremder Prozess (Port) </li>
+            </ul>
+        </div>
 
         <div> In diesem Falle gibt die IP Adresse den "betroffenen" Rechner an und der Port referenziert auf die der Verbindung zugehörigen Anwendung. Abhängig von der Anwendung kann zuätzlich serverseitig eine Datenbankabfrage stattfinden oder andere Anwednungssysteme genutzt werden. Auf Seite des Clients kommt es ebenfalls zur Nutung zuätzlicher Technologien wie zum Beispiel die Verwendung von JS und Frameworks wie jQuery oder Java Applets. Oder auch die Entwicklung von native Apps in beispielsweise SWIFT oder React Native. Eine weitere Technologie, die dabei auch nicht zu vergessen ist, ist das entwicklen von hybriden Apps und Webapplikaltionen. </div>
 
@@ -56,22 +58,24 @@
         <img class="img-center" src="../Assets/Graphics/Lecture1/javaapplets.jpeg" alt="javaapplets">
 
         <div> Da Java Applets lokaal ausgeführt werden, bringen sie einige Risiken mit sich. Dabei gibt es verschiedene Sicherheitsvorkehrungen, die den Applets unterliegen, um diese Risiken vorzubeugen: </div>
-
-        <ul>
-            <li> Keine Zeiger </li>
-            <li> Typsicherheit zur Laufzeit </li>
-            <li> Echte Feldgrenzen mit Überprüfung </li>
-            <li> Byte Code Verifier kann geladenen Byte Code verifizieren </li>
-            <li> Kein Zugriff auf Daten </li>
-            <li> Kommunikation nur mit dem Ursprungsrechner des Applets </li>
-            <li> Bestimmte Systemparameter können nicht ausgelesen werden </li>
-            <li> Applet-Fenster sehen anders aus als normale Fenster </li>
-        </ul>
+        
+        <div>
+            <ul>
+                <li> Keine Zeiger </li>
+                <li> Typsicherheit zur Laufzeit </li>
+                <li> Echte Feldgrenzen mit Überprüfung </li>
+                <li> Byte Code Verifier kann geladenen Byte Code verifizieren </li>
+                <li> Kein Zugriff auf Daten </li>
+                <li> Kommunikation nur mit dem Ursprungsrechner des Applets </li>
+                <li> Bestimmte Systemparameter können nicht ausgelesen werden </li>
+                <li> Applet-Fenster sehen anders aus als normale Fenster </li>
+            </ul>
+        </div>
 
         <div> Auch trotz der ganzen Sicherheitsvorkehrungen kommen Java Applets heutzutage nicht mehr zum Einsatz und sind von den meisten Broswern ausgeschaltet, da sie als trotz der Vorkehrungen als unsicher für die heutigen Anforderungen gelten. </div>
 
 
-        <h2> Serverseitige Technologien </h2>
+        <h3> Serverseitige Technologien </h3>
 
         <div> Die Grundlage serverseitiger Technologien ist die Weitergabe bestimmter Aufgaben etc. an (eine) externe Komponente(n). Der HTTP (Hypertext Transfer Protocol) Request wird dabei ,durch einen indirekten Request durch die URL (Uniform Resource Locator), weitergeleitet. Die externe(n) Komponente(n) regaiert / erzeugt dabei auf / mit einem Response. Die folgende Grafik veranschaulicht dabei die Position des (Web-)Servers: </div>
 
@@ -112,7 +116,7 @@
 
         <img class="img-center" src="../Assets/Graphics/Lecture1/servlets.jpeg" alt="servlets">
 
-        <h2> Speicherung von Objekten </h2>
+        <h3> Speicherung von Objekten </h3>
 
         <div> Objekte oder neu erarbeitet Zustände von vorhandenen Objekten müssen gespeichert werden, damit später darauf zugegriffen werden kann. Zwei Möglichkeiten sind dabei die Verwendung von Serialisierung und Textdateien. Diese beiden Verfahren ermöglichen es Zustände zu speichern, um später darauf zugreifen zu können. </div>
 
@@ -120,7 +124,7 @@
 
         <div> Damit auf eine Datei von einem anderen Programm aus zugegriffen werden kann, müssen die Daten in eine <em>.txt</em>-Datei mit Feldtrennzeichen geschrieben werden. Dafür können unterschiedliche Techniken verwendet werden, wie zum Beispiel in Byte-Form oder normalen Wörtern. </div>
 
-        <h2> Serialisierung & Deserialisierung </h2>
+        <h3> Serialisierung & Deserialisierung </h3>
 
         <div> Die Konvertierung eines Objekts in einen Bytestream bezeichnet man als Serialisierung. Den Gegenvorgang, um ein serialisiertes Objekt wieder auslesen zu können, nennt man Deserialisierung.</div>
 
@@ -199,25 +203,29 @@
         <h4> Reader </h4>
 
         <div>Im Folgenden werden die Methoden der Klasse Reader. Im Rahmen der Vorlesung haben wir uns noch Weitere angeschaut, die hier nicht gelistet sind, diese können bei Bedarf in der Dokumentation nachgeschaut werden. Für die Eingabe über Character-Streams stellt die Klasse Reader folgende Methoden: </div>
-
-        <ul>
-            <li><em>public abstract int read()</em>: Liefert das nächste Zeichen aus dem Reader-Objekt als Integer-Wert</li>
-            <li><em>public int read(char[] c)</em>: Füllt das Feld mit Zeichen aus dem Reader-Objekt und liefert die Anzahl der gelesenen Zeichen zurück</li>
-            <li><em>public int read(char[] c, int off, int n)</em>: Füllt das Feld ab Index of mit den nächsten n Zeichen aus dem Reader-Objekt und liefert die Anzahl der gelesenen Zeichen zurück</li>
-            <li><em>public void close()</em>: Schließt den Strom</li>
-        </ul>
+        
+        <div>
+            <ul>
+                <li><em>public abstract int read()</em>: Liefert das nächste Zeichen aus dem Reader-Objekt als Integer-Wert</li>
+                <li><em>public int read(char[] c)</em>: Füllt das Feld mit Zeichen aus dem Reader-Objekt und liefert die Anzahl der gelesenen Zeichen zurück</li>
+                <li><em>public int read(char[] c, int off, int n)</em>: Füllt das Feld ab Index of mit den nächsten n Zeichen aus dem Reader-Objekt und liefert die Anzahl der gelesenen Zeichen zurück</li>
+                <li><em>public void close()</em>: Schließt den Strom</li>
+            </ul>
+        </div>
 
         <h4> Writer </h4>
 
         <div>Zur Ausgabe über Character Streams stellt die Klasse Writer folgende Methoden bereit:</div>
-
-        <ul>
-            <li><em>public abstract void write(int c)</em>: Schreibt das Zeichen c in das Writer-Objekt</li>
-            <li><em>public void write(char[] c)</em>: Schreibt, die im von c referenzierten Feld gespeicherten, Zeichen in das Writer-Objekt</li>
-            <li><em>public void write(char[] c, int off, int n)</em>: Schreibt, die im von c referenzierten Feld gespeicherten, n Bytes ab Index of in das Writer-Objekt</li>
-            <li><em>public void write(String s)</em>: Schreibt, die im Strings gespeicherten, Zeichen in das Writer-Objekt</li>
-            <li><em>public void write(String s, int off, int n)</em>: Schreibt, die im String s gespeicherten, n Zeichen ab Index of in das Writer-Objekt</li>
-        </ul>
+        
+        <div>
+            <ul>
+                <li><em>public abstract void write(int c)</em>: Schreibt das Zeichen c in das Writer-Objekt</li>
+                <li><em>public void write(char[] c)</em>: Schreibt, die im von c referenzierten Feld gespeicherten, Zeichen in das Writer-Objekt</li>
+                <li><em>public void write(char[] c, int off, int n)</em>: Schreibt, die im von c referenzierten Feld gespeicherten, n Bytes ab Index of in das Writer-Objekt</li>
+                <li><em>public void write(String s)</em>: Schreibt, die im Strings gespeicherten, Zeichen in das Writer-Objekt</li>
+                <li><em>public void write(String s, int off, int n)</em>: Schreibt, die im String s gespeicherten, n Zeichen ab Index of in das Writer-Objekt</li>
+            </ul>
+        </div>
 
         <div>Hierbei gilt ebefalls, dass weiter Writer und Informationen aus der Dokumentation entnommen werden können.</div>
 

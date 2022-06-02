@@ -26,23 +26,67 @@
 
         <h3> Tomcat Server </h3>
 
-        <div></div>
+        <div> Das heutige Thema sind Java Servlets, dazu nutzen wir den Tomcat9 Server. Der Tomcat ist ein Webserver / Servlet-Container, der es ermöglicht Java-Code in einer HTTP-Webserverumgebung auszuführen. Damit der Tomcat genutzt werden kann, muss zunächst Tomcat 904 installiert und JAVA_HOME aktiviert werden. Die genauen Schritte dazu werden auf der <a href="https://tomcat.apache.org/tomcat-9.0-doc/setup.html">tomcat.apache.org</a> Seite näher erläutert. Bei Verständlichkeitsproblem kann aber auch auf YouTube Videos wie das Folgende zurückgegriffen werden: </div>
 
-        <h4> <em>Get-</em> und <em>Post-</em>Methode </h4>
+        <div>
+            <iframe class="vid-center" src="https://www.youtube.com/embed/c36PXbVbjCE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    
+        <h4> <em>Get-</em> und <em>Post-</em>Methoden </h4>
 
-        <div></div>
+        <div> Servlets und Java Server Pages (JSP) dienen der Programmierung von Webanwendungen. Dabei kommt es wieder, wie bereits besprochen, zur Client-Server-Kommunikation. Der Client sendet dabei einen HTTP-Request und enthält eine HTTP-Antwort vom Server. Die Anfrage des Clients enthält dabei eine HTTP-Methode. Der Methodenname liefert dabei Informationen über die Art der Anfrage und die Formatierung der Nachricht. Zur Umsetzung werden dabei häufig die sogenannten <em>Get-</em> und <em>Post-</em>Methoden verwendet.</div>
+        <br>
+        <br>
+        <div> Die folgenden beiden Abbildungen zeigen Dabei den Ablauf der <em>Get-</em> und <em>Post-</em>Methoden.</div>
 
-        <h4> MIME-Type </h4>
+        <img class="img-center" src="../Assets/Graphics/Lecture5/get1.jpeg" alt="get1">
 
-        <div></div>
+        <img class="img-center" src="../Assets/Graphics/Lecture5/post1.jpeg" alt="post1">
+
+        <div> Die beiden Methoden unterscheiden sich darin, dass die <em>Get-</em>Methode eine einfache Abfrage ist, die den Server darum bittet Datenressource zurückzusenden, wo hingegen die <em>Post-</em>Methode weitere Nutzerdaten übermitteln und das Versenden von Formulardaten an den Server ermöglicht. Doch wann verwendet man welche Methode? Anwendungsfälle für die <em>Post-</em>Methode anstatt der <em>Get-</em>Methode sind beispielweise die drei folgenden. Man möchte einen längeren Text in ein Sucheingabefeld eingeben (Zeichenmenge bei der <em>Get-</em>Methode ist begrenzt). Es sollen sensible bzw. vertrauliche Daten wie zum Beispiel Passwörter übermittelt werden (Alle Inhalte der <em>Get-</em>Methode sind sichtbar). Oder es soll kein Lesezeichen für das gesendete Formular angelegt werden (Die <em>Get-</em>Methode hat immer ein Lesezeichen).</div>
+        <br>
+        <br>
+        <div>Auch die Anatomie der beiden Methoden unterscheidet sich, was die folgenden zwei Abbildungen verdeutlichen: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture5/get2.jpeg" alt="get2">
+
+        <img class="img-center" src="../Assets/Graphics/Lecture5/post2.jpeg" alt="post2">
+
+        <h4> Multipurpose Internet Mail Extensions (MIME)-Type </h4>
+
+        <div> Ein MIME-Type besteht aus einem Header, der Informationen über die Art des Protokolls, ob die Anfrage erfolgreich war und welche Art der Inhalt im Rumpf hat enthält, und einem Rumpf, der den Inhalt, der im Browser dargestellt werden soll, enthält. Dabei wird der im Header angegebene Content-Type-Wert als Multipurpose Internet Mail Extensions-Type (kurz: MIME-Type) bezeichnet. Der MIMI-Type liefert  dem Broswer die Information, welche Art von Daten empfangen wird. </div>
 
         <h4> Verzeichnisstruktur von Apache-Webseiten </h4>
 
-        <div></div>
+        <div> Zur Veranschaulichung wie die Verzeichnisstruktur des Open Source Webservers Apache Tomcat funktioniert, schauen wir uns ein konkretes Beispiel an. Die Beispielwebseite heißt <em>www.wickedlysmart.de</em>. Diese stellt zum einen Ratschläge zum Thema <em>Skifahren</em> und zum anderen zum Thema <em>Bier</em> bereit. In diesem Beispiel läuft der Tomcat auf dem Port 80. Den vier HTML-Pages muss dabei eine URL zugeordent werden. In diesem Beispiel bekommt die Startseite, <em>index.html</em>, dann die URL-Adresse <em>www.wickedlysmart.de</em>. Folgich lässt sich die Ordnerstruktur zur Umsetzung dieser Seite wie folgt beschreiben: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture5/verzeichnisstruktur.jpeg" alt="verzeichnisstruktur">
 
         <h2> Übung 6 </h2>
         
-        <div></div>
+        <div> Das beschriebene Vorgehen üben wir nun in Übung 6 an einem Beispiel. In dieser Übung schreiben wir ein Servlet, stellen dieses bereit und führen es aus. Die Arbeitsschritten sehen dabbei folgendermaßen aus:</div>
+        <br>
+        <br>
+        <div> Zuerst legen wir eine Verzeichnisstruktur, wie oben in der Theorie erläutert, zum Strukturieren unseres Projektes an. </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture5/uebung1.jpeg" alt="uebung1">
+
+        <div> Daraufhin schreiben wir ein Servlet, dessen Dateiname <em>Kap01Servelt.java</em> ist und legen die Datei, wie in der Verzeichnisstruktur dargestellt, in der Ordner <em>src</em>. Daraufin schreiben wir die <em>web.xml</em>-Datei, die als Deployment Destructor dients. Diese Datei ordenen wir in den Ordner <em>etc</em>. Nun legen wir den Verzeichnisbaum, wie die nächste Abbildung zeigt, in unserem Tomcat-Verzeichnis an. </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture5/uebung2.jpeg" alt="uebung2">
+
+        <div> Nach dem Anlegen der Verzeichnisstruktur im Tomcat-Verzeichnis, kompilieren wird das Servlet aus dem Projekt1-Verzeichnis und kopieren daraufhin die Datei <em>Kap01Servelt<b>.class</b></em> nach <em>WEB-INF/classes</em> und die Datei <em>web.xml</em> nach <em>WEB-INF</em> in dem Tomcat-Verzeichnis. </div>
+        <br>
+        <br>
+        <div> Nun springen wir in das Tomcat-Verzeichnis und starten den Tomcat. Nach dem Start geben wir im Browser <em>http://localhost:8080/Kap01/Serv1</em> ein. Falls alles geglückt ist sieht das Endresultat wie folgt aus: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture5/localhost8080.png" alt="localhost8080">
+
+        <div> Der Quellcode der beiden Dateien zur erfolgreichen Umsetzung sieht dabei so aus: </div>
+
+        <img class="img-center" src="../Assets/Exercises/Exercise6/Kap01Servlet.png" alt="Kap01Servelt.java">
+
+        <img class="img-center" src="../Assets/Exercises/Exercise6/xml.png" alt=".xml">
 
     </body>
 </html>

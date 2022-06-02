@@ -26,23 +26,37 @@
 
         <h3> Einen Chat-Client coden </h3>
 
-        <div></div>
+        <div> Was braucht man um einen einfachen Chat-Client zu schreiben? Zunächst braucht man ein <em>TextField</em>, das den Chatverlauf mit allen gesendeten und empfangenen Nachrichten plus den Name des Senders abbilden kann. Weiterhin wird ein <em>Input</em> benötigt, der die Nachricht die man gerade schreibt anzeigt. Um diese Nachricht senden zu können wird dann ein <em>Button</em> mit <em>ButtonListener</em> benötigt. Sobald dieser betätigt wird, soll er die Nanchricht die im <em>Input</em>-Feld stehen an den Server senden, sodass diese im <em>TextField</em> angezeigt wird.</div>
 
         <h3> Threads </h3>
 
-        <div></div>
+        <div> Die Klasse <em>Thread</em> umfasst die Methoden, die einen Thread starten, schlafen legen oder zwei Threads verbinden. Dadurch, dass Threads sehr schnell hintereinander ausgeführt werden, kann sogar der Eindruck entstehen, dass mehrere Dinge gleichzeitig geschehen. Dies ist aber nur den Eindruck den wir Nutzer haben, denn mit einem Prozessor ist es nicht möglich. </div>
 
         <h3> Multithreading </h3>
 
-        <div></div>
+        <div> Multithreading hingegen ermöglicht die parallele Ausführung mehrer Handlungen. So kan ein Nuter mit dem User Interface (UI) ohne Einschränkungen agieren und gleichzeitig kann ein weiteres Programm im Hintergrund arbeiten, das am Beispiel des Chat-Clients auf neue Nachrichten wartet, um dieses im UI dem Empfänger anzuzeigen. Somit ist Multithreading extrem wichtig für die User Experience (UX) / Benutzerfreundlichkeit. </div>
+        <br>
+        <br>
+        <div> Wie der Name bereits sagt werden für das Multithreading mehrere Threads auf unterschiedlichen Stacks benötigt, die unterschiedliche Aufgaben verfolgen. Zusätlich wird, wie im Kapitel <em>Threads</em> bereits erwähnt, ein Multiprozessorsystem benötigt. Um den Wechsel zwischen den Threads zu ermöglichen, wird ein Thread-Scheduler benötigt.</div>
+        <br>
+        <br>
+        <div> Die Klasse <em>Thread</em> aus dem <em>java.lang</em>-Paket ermöglicht dann die Umsetzung des Multithreadings in Java. Um einen Ausführungs-Thread zu starten, muss eine Instanz der Klasse <em>Thread</em> erzeugt werden. Diese enthält die Methoden, die den Thread starten, schlafen legen oder mit anderen Threads verbindet. Wichtig ist dabei, dass der Hauptthread immer innerhalb der <em>main()</em>-Methode gestartet wird. Wenn weiter Threads verwendet werden sollen, lässt sich das ganze folgendermaßen umsetzen: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture3/multithreading1.png" alt="multithreading1">
+
+        <div> Der Thread dieses Beispiels würde jedoch direktr "sterben", da er keine Aufgabe hat. Eine Aufgabe wird dabei mithilfe des <em>Runnable</em>-Objekts festgelegt. Die Klasse <em>Runnable</em> wird durch ein <em>Runnable</em> Interface implementiert und stellt die Methode <em>run()</em> bereit, die an erster Stelle auf dem Stack des neuen Threads steht. Der Thread Konstruktor bekommt das <em>Runnable</em> Objekt übergeben und somit kann der Thread gestartet werden. Die Ausführungdauer und der Ausführungsstart werden dabei, wie bereits erläuert, durch den Thread-Scheduler bestimmt. Dabei hat der Thread einen Lebenszyklus, in dem er verschieden Zustände annehmen kann: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture3/multithreading2.jpeg" alt="multithreading2">
+
+        <div> Den Zustand <em>new</em> nimmt ein Thread ein, wenn er erzeugt, aber noch nicht gestartet wurde. Wenn der Thread gestartet wurde, wechselt er zwischen den Zuständen <em>ausführbar/lauffähig</em> und <em>nicht lauffähig/blockiert</em>. Wenn der Thread bereit zur Ausführung steht, aber noch nicht vom Thread-Scheduler ausgewählt wurde, hat er den ZUstand <em>lauffähig</em>. Im Zustand <em>beendet</em> befindet sich ein Thread, wenn der gesamte Stack des Threads abgearbeitet wurde. </div>
 
         <h2> Übung 4 </h2>
 
-        <div></div>
+        <div> In Übung 4 haben wir zunächst den Chat-Client aus der Vorlesung abgeschrieben. Dabei müssen wir die IP-Adresse und den Port anpassen, um den Server, den uns der Dozent bereitgestellt hat, nutzen zu können. Eine Alternative dazu ist ein eigener Server. Den Code dazu haben wir ebenfalls erhalten. Danach testeten wir den Chat-Client. Nachdem wir sicherstellen konnten, dass alles funktionsfähig ist, war es unsere Aufgabe <b>3 Erweiterungen</b> einzubauen: Die erste Erweiterung ist das Programmieren eines <em>KeyListeners</em>, damit eine Nachricht über das Betätigen der Enter-Taste gesendet werden kann. Erweiterung 2 ist, dass der Name des Senders nicht manuell vor jeder Nachricht eingegeben werden muss, sondern automatisch beim Senden der Nachricht mitgegeben wird. Die letzte Erweiterung ist das Einbinden der UTF-8 Zeichentabelle, damit Sonderzeichen korrekt genutzt werden können. Die Lösung des Codes sieht dabei wie folgt aus: </div>
 
         <img class="img-center" src="../Assets/Exercises/Exercise4/einfacherchatclient.png" alt="einfacherchatclient.java">
 
-        <div> Das ganze sieht in der praktischen Umsetzung dann wie folgt aus: </div>
+        <div> Das Ganze sieht in der praktischen Umsetzung dann wie folgt aus: </div>
 
         <video class="img-center" controls>
             <source src="../Assets/Graphics/Lecture3/clientvideo.mp4" type="video/mp4">

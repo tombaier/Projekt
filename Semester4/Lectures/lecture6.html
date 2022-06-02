@@ -24,53 +24,79 @@
             <a href="../react.html">Vertiefung</a>
         </div>
 
-        <h3> Java Enterprise Edition (JEE) </h3>
-
-        <div></div>
-
         <h3> Progressive Web Apps (PWA) </h3>
 
-        <div></div>
+        <div> Progressive Web Apps können als Ergebnis einer Kombination aus einer responsiven Webseite und einer App definiert werden. Diese in kurz PWA genannten Progressive Web Apps werden mit Hilfe von HTML5, CSS3 und JS (oder auch Typescript(TS)) programmiert. Zur Client-Server-Kommunikation wird dabei das Hypertext Transfer Protocol Secure(HTTPS)-Protokoll genutzt. Zudem verfügt die PWA über einen eigenen Cache, der bei einer Client-Anfrage entscheidet, ob eine Internetverbindung notwendig ist oder nicht. Dies ermöglicht somit die Offline-Nutung der Applikation, das Senden von Push-Nachrichten und die Hintergrundaktualisierungen. </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture6/pwa.png" alt="https://d3i71xaburhd42.cloudfront.net/12c54730a4a3fc87a41f94d992a96d51ff3b8a4d/9-Figure5-1.png">
+
+        <div> Zusätzlich dazu unterscheiden die PWA sich in Single-Page-Applications (SPA) und Multi-Page-Applications (MPA). </div>
 
         <h3> SPA vs MPA </h3>
 
-        <div></div>
+        <div> Multi-Page-Applications (MPA) sind uns bereits bekannt, sie bestehen aus mehreren HTML-Seiten, die miteinander verbunden sind. Ein Beispiel dafür ist dieses Portfolio, denn wenn Sie in Menüleiste oben von <em>Vorlesung 1</em> auf <em></em>Vorlesung 2</em> wechseln, wird eine neue HTML-Seite geladen, die ebenfalls als eine andere HTML-Datei im Verzeichnis zu finden ist. Dabei entsteht auch Redundanz. Denn wie sich unschwer erkennen lässt, sieht die Menüleiste auf allen Seiten exakt identisch aus, da der Quellcode für die Menüleiste in jede HTML-Datei kopiert wurde, um einen einheitlichen Look und eine angenehme Nutzung zu ermöglichen. Dieses Problem beheben die sogenannten Single-Page-Applications (SPA). Denn diese ermöglichen es Komponenten einmal zu formulieren und beliebig oft zu nutzen, sie sind somit <em>reusable</em> und somit sparen sie dem Entwickler Zeit und vermeiden Redundanzen. Aus Entwicklungssicht funktioniert das Ganze so, dass es nur eine HTML-Seite gibt, in die der JavaScript-Code verschiedene Inhalte rendert/lädt. Somit gibt man innerhalb des JavaScript-Codes das Design, den Inhalt und die Struktur (wann welche Seite gezeigt werden soll) an und die HTML-Seite zeigt den Inhalt, den sie von JS breitgestellt bekommt, an. Ein beliebtes (und immer beliebter werdendes) Framework dafür ist <b>React</b>. </div>
 
         <h3> React </h3>
 
-        <div></div>
+        <div> Auf React gehe ich dabei nicht weiter ein, da ich React in <a href="../react.html">meinem Vertiefungsthema</a> nochmals genauer behandele. </div>
 
         <h3> Typescript </h3>
 
-        <div></div>
+        <div> Auch Typescript wird immer beliebter und basiert auf dem <em>ECMAScript-6-Standard</em> beziehungsweise auf JavaScript. Die von Microsoft entwickelte Programmiersprache kann also auch als <em>Superset</em> von JavaScript bezeichnet werden. Somit funktioniert jeder JS-Code auch in TS, jedoch funktioniert TS-Code nicht (immer) in JS. Klassen, Objekte, Methoden und Ähnliches funktionieren wie in JavaScript. Den Vorteil den Entwickler durch Typescript genießen ist die <b>Typsicherheit</b>, die eine höhere Code-Qualität bietet. Die Typsicherheit ist dabei aus anderen Programmiersprachen wie zum Beispiel Java oder C# bekannt. Das folgende Beispiel verdeutlicht den Vorteil der Typsicherheit: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture6/ts.png" alt="ts">
 
         <h3> Node.js </h3>
 
-        <div></div>
+        <div> Node.js ist in C, C++ und JavaScript geschrieben und ist eine Single-Thread, Open Source, plattformübergreifende Laufzeitumgebung. Es wird im Bezug auf Webanwendungen als Backened genutzt und bietet Schnelligkeit und hohe Skalierbarkeit. Dabei kann Node.js auch erweitert werden. Zum Beispiel wird der <em>Node-Package-Manager(NPM)</em> dazu verwendet Module, wie zum Beispiel React oder auch Firebase als Datenbank, mit ihren Abhängigkeiten zu installieren, kompilieren, aktualisieren und zu entfernen. </div>
 
         <h3> Express.js </h3>
 
-        <div></div>
+        <div> Express.js ist ein Webframework für Node.js. Es erweitert somit die Werkzeuge von Node.js für den Entwickler. Express.js unterstützt dabei das Entwickeln von SPA, MPA und hybriden Webanwendungen. Express.js stellt ein Routing-System zur Navigation zur Verfügung, aber auch robuste, vereinfachte Funktionen mit denen sich leistungsfähigere Komponenten entwicklen lassen. </div>
+
+        <h3> JavaScript </h3>
+
+        <div> Wir beschäftigen uns nun mit einzelnen Funktionen, Mehoden etc. die JavaScript bereitstellt. Wie erwähnt lassen diese sich problemlos auf Typescript übertragen. Im folgenden gehe ich dabei nur auf (mir) unbekanntere Bestandteile aus der Vorlesung ein und lasse bereits intesiv besprochene Punkte wie klassische Datentypen, Objekte, Variablen, Schleifen, Methoden oder ähnliches aus. </div>
+
+        <h3> High Order Functions (HOF) </h3>
+
+        <div> Als High Order Functions bezeichnet man Funktionen, die andere Funktionen verändern beziehungsweise beeinflussen können. Ein Beispiel für eine HOF sieht folgendermaßen aus: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture6/hof.png" alt="hof">
 
         <h3> Object Destructuring </h3>
 
-        <div></div>
+        <div> Object Desructuring wird verwendet, um einzelne Werte und Eigenschaften von Arrays und/oder Objekten zu lösen. </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture6/object-destructuring.png" alt="object-destructuring">
 
         <h3> Object Literal Enhancement </h3>
 
-        <div></div>
+        <div> Object Literal Enhancement ist das Gegenstück zu Object Destructuring. Somit können durch diese Anwendung Objekte und/oder Arrays zusammengesetzt werden: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture6/object-literal-enhancement.png" alt="object-literal-enhancement">
 
         <h3> Spread Operator </h3>
 
-        <div></div>
+        <div> Durch den Spread Operator können zwei Arrays in ein drittes Array kombiniert werden. Dabei entsteht eine lokale Kopie und somit werden die originalen Daten nicht beeinflusst oder beschädigt. </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture6/spread-operator.png" alt="spread-operator">
 
         <h3> Asynchrone Programmierung </h3>
 
-        <div></div>
+        <div> In einem synchronen Programm passieren Dinge nacheinander, somit kann das Programm solange ein Prozess / eine Aktion nicht abgeschlossen ist nicht weiterarbeiten. Im Gegenzug können bei einem asynchronen Programm mehrere Prozesse / Aktionen gleichzeitig ausgeführt weden. Somit kann das Programm parallel oder wie der Name bereits sagt asynchron gearbeitet werden. Dabei wird das Programm benachrichtigt sobald eine Aktion abgeschlossen ist und weiß somit genau wann er auf das Ergebnis zugreifen und dieses verwendet / verarbeiten kann.</div>
+        <br>
+        <br>
+        <div> Das folgende Beispiel verdeutlicht dabei die Unterschiede. Denkt daran, dass zwei Ressourcen aus dem Netwerk abgerufen werden sollen, so ist es in der synchronen Umgebung nur nacheinander möglich. Sprich, es wird zu erst die eine Ressource geladen, bevor die andere Ressource geladen werden kann. Somit bildet sich die erforderliche Zeit aus der Summe der beiden Antwortzeiten / Aktionszeiten. In einer asychronen Umgebung werden zusätliche Threads, die jeweils einen eigenen Prozessor haben, verwendet. Somit ist es möglich beide Ressourcen gleichzeitig anzufragen und zu laden. Beide Threads warten somit auf zeitgleich auf den Eingang der Antwort. Die erfoderliche Zeit ist dann die Zeit des Threads, der eine längere Zeit braucht. Daraus resultiert, dass wenn mehrere Ressourcen aus dem Netzwerk geladen werden sollen, die asnychrone Variante immer schneller das Ergebnis erlangt, als es die synchrone Methode tut.</div>
 
         <h3> Promises </h3>
 
-        <div></div>
+        <div> Bei einem Promise handelt es sich um eine asynchrone Aktion, die zu einer unbestimmten Zeit abgeschlossen wird und dann einen Wert bereitstellt. Wenn der Wert bereitsteht kann das Promise dann jeden Interessierten darüber benachrichtigen. Ein Promise kann mit Hilfe der <em>Promise.revolve</em>-Funktion </div> aufgerufen werden. Dabei wird der Wert, der übergeben werden soll, in ein Promise eingeschlossen. Ist dieser Wert schon ein Promise, dann wird er direkt zurückgegeben. Wenn das nicht der Fall ist, entsteht ein neues Promise, welches mit dem neuen Ergebnis abgeschlossen wird. Es handelt sich bei einem Promise, um eine asynchrone Aktion, die in der Zukunft abgeschlossen und ein Ergbnis liefern wird. Man kann sich das Ganze also so vorstellen, das der Wert durch ein Promise in eine asynchrone Realität verschoben wird, wohingegen ein normaler Wert einfach vorhanden ist. Ein Promise-wert kann vorhandensein oder auch erst in der Zukunft erscheinen. 
+        <br>
+        <br>
+        <div> Promise kann man auch als Konstrukor verwenden um einen Promise zu erzeugen. Dabei muss eine Funktion als Argument mitgegeben werden. Die Funktion im Argument wird dann ausgeführt und erhält eine bereitgestellte Funktion, die das Promise auflösen kann. Eine Codedarstellung dazu sieht so aus: </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture6/promises.png" alt="promises">
 
     </body>
 </html>

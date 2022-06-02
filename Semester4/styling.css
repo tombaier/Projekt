@@ -9,30 +9,32 @@ body {
 h2 {
     color: #e17055;
 	font-size: 4vw;
-    margin-left: 30px;
+    margin-left: 300px;
 }
 
 h3 {
     color: #e17055;
 	font-size: 2vw;
-    margin-left: 30px;
+    margin-left: 300px;
 }
 
 h4 {
     color: #e17055;
 	font-size: 1.5vw;
-    margin-left: 30px;
+    margin-left: 300px;
 }
 
 div {
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 300px;
+    margin-right: 300px;
     text-align: justify;
 }
 
 #head {
     background-color: #e17055;
     height: 120px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 #head a {
@@ -61,6 +63,14 @@ div {
 .img-center {
     width: 50%;
     height: 50%;
+    margin-left: 25%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.vid-center {
+    width: 50%; 
+    height: 500%;
     margin-left: 25%;
     margin-top: 10px;
     margin-bottom: 10px;

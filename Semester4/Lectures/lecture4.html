@@ -26,33 +26,52 @@
 
         <h3> Das Schlafenlegen von Threads </h3>
 
-        <div></div>
+        <div> Das Verhalten des Thread-Schedulers ist nicht kalkulierbar und vorhersehbar. Das Ziel ist es somit das Programm so zu schreiben, dass es nicht auf ein bestimmtes Verhalten abzielt. Ein Ansatz zur Umgehung des Problems ist das Blockieren eines Threads für einen bestimmten Zeitraum. Der blockierte Zustand wird dabei auch als schlafender Zustand des Threads bezeichnet. Dabei kann der Thread erst nach Ablauf der bestimmten Zeit wieder laufen. Wie bereits erläutert ist dies jedoch nur ein Ansatz zur Behebung dieses Problems. Da wir den Algorithmus nicht genau kennen, ist der Thread-Scheduler weiterhin nicht voll kalkulier- und kontrollierbar.</div>
 
         <h2> Übung 5 </h2>
 
-        <div> </div>
+        <div> Um dieses Problem zu visualisieren und beobachten, haben wir in Übung 5 zwei Threads erzeugt und deren Verhalten analysiert: </div>
 
         <img class="img-center" src="../Assets/Exercises/Exercise5/meinrunnable.png" alt="meinrunnable.java">
-
-        <div> </div>
 
         <img class="img-center" src="../Assets/Exercises/Exercise5/zweithreads.png" alt="zweithreads.java">
 
         <h3> Nebenläufigkeitsprobleme von Threads </h3>
 
-        <div> </div>
+        <div> Bei Threads können Nebenläufigkeitsproblemen und somit Konkurrenzsituationen entstehen. Nebenläufigkeitsprobleme treten auf, wenn mehrere Threads mit den gleichen Heap-Objekten arbeiten. Im schlimmsten Fall kann es dabei zu Datenverfälschung kommen. Das Problem ist hierbei, dass Threads unabhängig voneinander arbeiten und somit nicht wissen was ein anderer Thread gerate macht. Daraus folgt, dass die Threads strikt ihre Prozesse abarbeiten, sobald sie im Zustand <em>laufend</em> sind.</div>
 
-        <h3> Verlorene Aktualisierung </h3>
+        <h4> Veranschaulichung des Nebenläufigkeitsproblems </h4>
 
-        <div></div>
+        <div> Das Szenario ist ein Ehepaar, das ihr Konto nicht überziehen möchte. Der Ehemann überprüft zuerst den Kontostand und das System zeigt ihm an, dass noch 100€ verfügbar sind. Er möchte 50€ abheben, doch bevor er dies tun kann, schläft er kurz ein. Seine Ehefrau überprüft nun auch den Kontostand und sieht ebenfalls, dass noch 100€ zur Verfügung stehen. Die 100€ hebt sie ab. Danach wacht ihr Ehemann wieder auf, ohne zu wissen, dass er geschlafen hat, und hebt die 50€, da er zubor den Kontostand geprüft hat und sich sicher ist noch 100€ auf dem Konto zu haben, ab. Nun ist es geschehen und das Konto ist um 50€ überzogen und ein Nebenläufigkeitsproblem ist entstanden. </div>
+        
+        <h4> Problemlösung </h4>
+
+        <div> Eine Lösung dieses Problems wäre möglich, indem man den Prüfung des Kontostandes für die Ehefrau als ungültig erklärt und man ihr keinen Zugriff auf das Konto gewährt, bis der Vorgang des Ehemanns abgeschlossen ist. Veranschaulicht braucht man also ein Schloss mit nur einem Schlüssel. Der erste erhält diesen Schlüssel schließt das Schloss auf, führt seinen Vorgang aus und schließt das Schloss wieder zu, wenn der Vorgang beendet ist. Erst danach darf der einzige Schlüssel für dieses Schloss wieder freizugänglich für andere Nutzer sein.</div>
+        <br>
+        <br>
+        <div> Das Schlüsselwort <em>synchronized</em> ist eine Möglichkeit das Ganze auf Codeebene umzusetzen. <em>Synchronized</em> ermöglicht es eine Methode so einzugrenzen, dass immer nur ein Thread auf sie zugreifen kann. Hierbei ist darauf zu achten, dass das Schloss kein Schloss für die Methode, sondern für das Objekt, welches von der Methode aufgerufen wird, ist. Somit verschließt man nicht die Daten selbst, sondern man synchronisiert lediglich die Methoden die auf die Daten zugreifen können. </div>
+
+        <h3> Problem der verlorenen Aktualisierung </h3>
+
+        <div> Das Problem der verlorenen Aktualisierung ist eine spezielle Form des Nebenläufigkeitsproblems. Dieses Problem entsteht, wenn Änderungen an Objekten nicht atomar, sondern in Etappen / Stücken stattfinden. Wenn eine Methode nur aus einer Anweisung besteht, tritt dieser Fall nicht auf. Am Beispiel des Bankkontos lässt sich dies visualisieren: Eine Variable soll erhöht werden, indem sie erst in einer lokalen Variable zwischengespeichert  und anschließend der Variable die Ursprungsvariable als Wert + 1 zugewiesen wird.</div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture4/va1.png" alt="va1">
+
+        <div> Sobald mehrere Threads versuchen den Kontostand zu erhöhen kann es Problemen führen, falls einer der Therads vom Zustand laufend in lauffähig zurückgesetzt wird, bevor dieser Thread die Methode vollständig bearbeitet hat. Dabei gilt ebenfalls das Schüsselwort <em>synchronized</em> als Lösung, denn damit kann der zweite Thread die Methode nocht bearbeiten, solange der erste Thread seinen Vorgang noch nicht abgeschlossen hat.</div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture4/va2.png" alt="va2">
 
         <h3> Thread Deadlock </h3>
 
-        <div></div>
+        <div> Ein weiteres Problem, dass beom Verwenden von Multithreading auftreten kann, ist der Thread Deadlock. Dabei handelt es sich um eine gegenseitige Blockade von synchronisierten Methoden. Dieses Problem entsteht wenn ein Thread den Schlüssel hat, den der jeweils andere Thread benötigt (und umgekehrt). Dabei warten die Threads darauf, dass der Schlüssel, den sie benötigen, freigegeben wird ohne ihren eigenen Schlüssel freizugeben. </div>
+
+        <img class="img-center" src="../Assets/Graphics/Lecture4/thread_deadlock.jpeg" alt="thread_deadlock">
+
+        <div> Java stellt für die Lösung dieses Problems leider keine Optionen bereit. Es fällt dabei sogar nicht mal auf, dass ein Deadlock vorliegt und die Threads werden für unendliche Zeit ihre Schlüssel nicht freigeben. </div>
 
         <h3> Das Erzeuger- / Verbraucherproblem </h3>
 
-        <div> </div>
+        <div> Das Erzeuger- / Verbraucherproblem ist das vierte und letzte Problem der Vorlesung zum Thema Threads. Dieses Problem entsteht, wenn mehrere Threads Daten über einen Puffer-Speicher austauschen. Wenn ein Verbraucher dabei versucht auf neue Daten zuzugreifen, die nocht nicht oder nur mit älteren Daten vorliegen, spricht man von dem Erzeuger- / Verbraucherproblem. Eine Möglichkeit zur Lösung dieses Problems ist die sogenannte Thread-Kommunikation. Dies ermöglicht es bestimmten Threads mit Hilfe der  <em>join()</em> oder <em>join(ling mullis)</em> Methode sich "vorzudrängeln", auf einander mit Hilfe der <em>wait()</em> oder <em>wait(long timeout)</em> Methode zu warten und/oder andere Threads mit Hilfer der <em>notify() oder notifyAll()</em>Methode zu benachrichtigen, wenn sie ihre Ausführung beendet haben. </div>
 
     </body>
 </html>
