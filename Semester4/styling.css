@@ -24,6 +24,14 @@ h4 {
     margin-left: 300px;
 }
 
+h5 {
+    color: #000000;
+	font-size: 1vw;
+    margin-left: 300px;
+    margin-right: 300px;
+    text-align: justify;
+}
+
 div {
     margin-left: 300px;
     margin-right: 300px;
@@ -74,4 +82,26 @@ div {
     margin-left: 25%;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+#btnDiv{
+	text-align: center;
+	padding: 4%;
+}
+
+#btn{
+    width: 300px;
+    height: 50px;
+    font-size: 100%;
+    text-decoration: none;
+    background-color: #e17055;
+    border-radius: 10px;
+    border-color: #e17055;
+    color: #FFFFFF;
+}
+
+#btn:hover{
+    background-color: #fab1a0;
+    border-color: #fab1a0;
+    color: #FFFFFF;
 }

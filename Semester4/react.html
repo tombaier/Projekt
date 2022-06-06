@@ -10,7 +10,7 @@
     <body>
 
         <div id="head">
-            <a>FeedGram basierend auf ReactTS</a>
+            <a>Feedgram basierend auf ReactTS</a>
         </div>
 
         <div id="nav">
@@ -23,6 +23,154 @@
             <a href="Lectures/lecture6.html">Vorlesung 6</a>
             <a href="react.html">Vertiefung</a>
         </div>
+
+        <h3> Aufgabenstellung </h3>
+
+        <div> Mein Vertiefungsthema der Vorlesung dieses Semesters bezieht sich auf die Aufgabe meiner letzten Praxisphase, die ich aufgrund der Absetzung eines Projektes erhalten habe. Es geht dabei darum Instagram mit den <b>Core-Features</b> nachzubauen, um meine Skills im Development voranzutreiben. Dabei kamen verschiedene aktuelle Webtechnologien zum Einsatz, auf die ich in den folgenden Abschnitten genauer eingehen werde. </div>
+
+        <h3> Verwendete Technologien </h3>
+
+        <div> Der Instagramklon, den ich den ich <em>Feedgram</em> getauft habe, verwendet die folgenden Technologien: </div>
+
+        <div>
+            <ul>
+                <li> <b>React</b> </li>
+                <li> <b>TypeScript</b> </li>
+                <li> <b>Node.js</b> </li>
+                <li> <b>Node Package Manager (NPM)</b> </li>
+                <li> <b>Firebase</b> </li>
+                <li> <b>Material UI (MUI)</b> </li>
+            </ul>
+        </div>
+
+        <div> Im Folgenden werde ich die einzelnen Technologien genauer erläutern, bevor ich auf die Umsetzung meiner App zu sprechen komme. </div>
+
+        <h4> React </h4>
+
+        <div> React bezeichnet sich selbst als JavaScript Bibliothek. Es ist kostenlos und eine Open-Source-Software und ist auf die Frontendentwicklung spezialisiert. Wie in  <a href="Lectures/lecture6.html">Vorlesung 6</a> erläutert dient React zur Programmierung von Single Page Applications. In React wird das Konzept von SPA zum Beispiel durch <b>Components</b> und <b>ReactDOM</b> umgesetzt. React ist dabei <b>deklarativ</b>, das heißt es werden Aussagen wie folgende formuliert: <em>"Ich hätte gerne dies oder das"</em>. React umfasst somit Funktionen die eher auf ein Framework hindeuten, bezeichnet sich jedoch selbst als Bibliothek.</div>
+        <br>
+        <br>
+        <div> <b>Components</b> oder <b>Komponenten</b> sind Codeblöcke, die React-Elemente erzeugen. Sie werden dabei generisch (generic) programmiert, damit sie wiederverwendet werden können und Redundanz im Code vermieden werden kann. Komponenten kann man über die <em>funktionale Definition</em> und die <em>klassenbasierte Definition</em> erzeugen. Bei der <em>funktionalen Definition</em> definiert man eine JavaScript-Methode, die im Return-Statement ein React-Element zurückgibt. Bei der <em>klassenbasierten Definition</em> wird eine JavaScript-Klasse geschrieben, die von <em>React.Component</em> über das Schlüsselwort <em>extends</em> erbt. Dabei muss zusätzlich eine <em>render()</em>-Funktion, die das React-Element ausgibt, definiert werden. Um die Klasse <b>generisch</b> zu gestalten, gibt es die sogenannten <em>Properties (kurz: props)</em>. Diese <em>Properties</em> müssen bei einer <em>funktionalen Definition</em> immer mitgegeben werden. Ein Beispiel für eine <em>funktionalen Definition</em> sieht wie folgt aus: </div>
+
+        <img class="img-center" src="Assets/Graphics/Feedgram/component.png" alt="component">
+
+        <div> Komponenten können wie Schleifen und Funktionen <b>verschachtelt</b> werden.</div>
+        <br>
+        <br>
+        <div> Die Idee hinter dem <b>ReactDOM</b> ist Zeit des Renderns zu minimieren. Wenn häufig Änderungen auf einer Seite vorgenommen werden müssen, kostet es jedes Mal sehr viel Zeit das gesamte DOM neu zu rendern. Um die Performance zu steigern, berechnet React in einem virtuellen DOM welche Bereiche neu gerendert werden müssen und gibt dann nutzt dann den effizientesten Weg, um nur die notwendigen Bereiche neu zu laden. </div>
+
+        <h4> TypeScript </h4>
+
+        <div> Auch Typescript wird immer beliebter und basiert auf dem <em>ECMAScript-6-Standard</em> beziehungsweise auf JavaScript. Die von Microsoft entwickelte Programmiersprache kann also auch als <em>Superset</em> von JavaScript bezeichnet werden. Somit funktioniert jeder JS-Code auch in TS, jedoch funktioniert TS-Code nicht (immer) in JS. Klassen, Objekte, Methoden und Ähnliches funktionieren wie in JavaScript. Den Vorteil den Entwickler durch Typescript genießen ist die <b>Typsicherheit</b>, die eine höhere Code-Qualität bietet. Die Typsicherheit ist dabei aus anderen Programmiersprachen wie zum Beispiel Java oder C# bekannt. </div>
+
+        <h4> Node.js </h4>
+
+        <div> Node.js ist in C, C++ und JavaScript geschrieben und ist eine Single-Thread, Open Source, plattformübergreifende Laufzeitumgebung. Es wird im Bezug auf Webanwendungen als Backened genutzt und bietet Schnelligkeit und hohe Skalierbarkeit. </div>
+
+        <h4> Node Package Manager (NPM) </h4>
+
+        <div> Node.js kann erweitert werden. Zum Beispiel wird der <em>Node-Package-Manager(NPM)</em> dazu verwendet Module, wie zum Beispiel Firebase als Datenbank, mit ihren Abhängigkeiten zu installieren, kompilieren, aktualisieren und/oder zu entfernen. Wichtige Befehle in der Commandozeile sind dabei: </div>
+
+        <div>
+            <ul>
+                <li> npm i <em>packageName</em> - um Pakte lokal zu installieren </li>
+                <li> npm i -g <em>packageName</em> - um Pakete global zu installieren </li>
+                <li> npm up - um Pakete zu updaten </li>
+                <li> npm un <em>packageName</em> - um Pakete zu deinstallieren </li>
+                <li> npm ls - um installierte Pakete/Module anzuzeigen </li>
+            </ul>
+        </div>
+
+        <div> Die verwendeten / installierten Packages und Dependencies eines Projektes werden innerhalb des Projektes in einem Ordner namens <em>node_modules</em> abgelegt. </div>
+
+        <h4> Firebase </h4>
+
+        <div> Firebase ist eine Entwicklungs-Plattform von Google für mobile und Webanwendungen. Firebase stellt dabei verschiedene Tools bereit. Zum Beispiel gibt es ein Tool für die Authentication eines Nutzers. Dabei stellt Firebase verschiedene Authentication Methoden bereit wie zum Beispiel die Registrierung über Google, Twitter oder ganz klassisch eine Mail mit Passwort. Zudem stellt Firebase aber auch eine NoSQL Datenbank (Firestore Database) bereit, die es dem Entwickler ermöglicht über <b>collections</b> und <b>documents</b> Informationen zu speichern und in Echtzeit auszugeben.</div>
+
+        <img class="img-center" src="Assets/Graphics/Feedgram/firebase.png" alt="firebase">
+
+        <div> Dabei ist es wichtig zu erwähnen, dass Firebase die Konsole und alle Informationen über ein User Interface (UI) bereitstellt und stark von anderen Datenbanken abweicht, da es keine direkte Entwicklungsumgebung und Abfragen für Datenbank gibt. Man muss somit mit den gegebenen Komponenten und Parameter der Datenbank arbeiten. Wie und Was in der Datenbank gespeichert werden soll wird direkt im JavaScript Code festgehalten. Dies ist möglich indem Firebase ein Software Development Kit (SDK) bereitstellt, welches es der Programmiersprache, z.B. JavaScript, ermöglicht das Projekt beziehungsweise die Datenbank von Firebase zu finden. </div>
+        <br>
+        <br>
+        <div> Firebase ist eine Datenbank die sich meiner Meinung nach sehr gut für mobile Anwendungen und Webapplikationen eignet, da sie sich leicht implementieren lässt und alle Bedürfnisse für eine nicht allzu komplizierte Anwendung bereitstellt. Klar sollte dabei aber auch sein, dass Firebase nicht für die Nutzungen in großen Konzernen geeignet ist. </div>
+        
+        <h4> Material UI (MUI)</h4>
+
+        <div> Material UI ist eine User Interface Bibliothek für React die auf den Material Design, die Designsprache von Google, basiert. Sie stellt Looks und Designs für zum Beispiel Button, Header, Menus oder auch für Schriftarten und Inhalte bereit. Diese haben dabei einen modernes Design, was sich darin bestätigt, dass die Bibliothek für große Webanwendungen wie Twitter benutzt wird. Material UI stellt die verschiedenen Designs in Komponenten bereit. Dies bringt den Vorteil mit sich, dass die Design individuell angepasst werden können. Der zweite Vorteil ist, wie ich beim Thema React erklärt habe, die Komponenten genersich sind. Somit muss zum Beispiel ein Button nur einmal in einer Komponente erstellt und angepasst werden und kann daraufhin beliebig oft wiederverwendet werden. </div>
+
+        <h3> Umsetzung der App </h3>
+
+        <div> Wie in der Theorie zu dieser App beschrieben verwendet Feedgram verschiedene Technologien. Zuästzlich zu den oben genannten Technologien habe ich <b>VSCode</b> als Code-Editor benutzt und <b>GitHub</b> zur Verwaltung meine Projektes, da GitHub mir die Möglichkeit bietet in verschiedenen Branches zu arbeiten und somit verschiedene Entwicklungsprozesse sauber zu trennen und auf verschiedene Versionen der Applikation zurückgreifen zu können. </div>
+
+        <h5>  <a href=" https://github.com/tombaier/my-own-app">Github Feedgram Projekt</a> </h5>
+
+        <div> Doch nun zur wirklichen Umsetzung des Projektes. Begonnen habe ich damit indem ich ein blankes React-TypeScript über den NPM-Befehl <em>npx create-react-app my-own-app --template typescript</em> erstellt habe. <em>my-own-app</em> ist dabei der Titel meines Projektes. Node stellt mir durch diesen Command ein React-TypeScript-Projekt bereit, welches sich sofort ausführen lässt. Somit sind alle Voraussetzungen getroffen und die eigentliche Arbeit kann beginnen. Dazu habe ich, wie im Kapitel von NPM erklärt, die benötigten Packages installiert.Dazu gehören React, Firebase, TypeScript und MUI. </div>
+        <br>
+        <br>
+        <div> Da dieses Projekt über zwei Monate ging, kann ich nicht auf jeden einzelnen Schritt des Entwicklungsprozesses eingehen und werde nur einzelne Punkte aus der Anwendung vorstellen. </div>
+
+        <h4> Komponenten </h4>
+
+        <div> Beginnen wir mit dem Coding in React. Dazu stelle ich einmal das Konzept der wiederverwendbaren Komponenten vor und das Routing durch die App mit nur einer HTML-Seite (SPA). Dazu schauen wir uns die Datei <em>HeaderBase.tsx</em> an. Die <em>.tsx</em>-Endung symbolisiert dabei, dass es sich um eine React-TypeScript Datei handelt. </div>
+
+        <img class="img-center" src="Assets/Graphics/Feedgram/headerbase.png" alt="headerbase">
+
+        <div> Blicken wir zunächst auf die Imports. Wie beschrieben verwende ich hierbei vorgefertigte Teile aus MUI. Dabei erstelle ich die <em>const</em>> namens <em>HeaderBase</em> die exportiert werden soll, damit ich sie an verschiedenen Stellen meines Projektes verwenden kann. Die Funktion, die <em>FC = Functional Component</em> erhält die Properties vom Typ <em>Box</em>, die aus der MUI-Library entnommen habe. Darauf werden <em>children, ...props</em> festgelegt. Sie dienen als Platzhalter, damit an diesen Stellen die Komponente erweitert werden kann, falls dies notwendig ist. Im Return-Statement der Funktion gebe ich dann die verschiedenen graphischen Inhalte zurück die auf der Seite gezeigt werden sollen. Dabei verwenden wir zunächst die MUI-Box, die als Kasten fungiert und die Properties erhält. Somit kann die Box, zum Beispiel die Größe oder Sichtbarkeit des gesamten Headers angepasst werden. Danach folgt verschachtelt die <em>AppBar</em>. Dies gibt die Position und Farbe des Header mit. Im <em>Container</em> wird dann mit <em>maxWidth="xl"</em> die maximale Bildschirmgröße die der Header erfüllen kann festgelegt. Dadurch dass die Box <em>flex</em> ist, ist der Header dann je nach Display-Größe unterschiedlich groß. In dem Container finden wir dann die <em>Toolbar</em>, innerhalb dieser stehen die sogenannten <em>children</em>. Die Children fungieren dabei als Platzhalter. Somit kann die Toolbar durch weitere Komponenten mit Inhalt gefüllt werden. Genau dies tun wir in der Datei <em>HeaderMain.tsx</em>, denn dort fügen wir eine Suchleiste und Avatar-Icon in unseren Header hinzu: </div>
+
+        <img class="img-center" src="Assets/Graphics/Feedgram/headermain.png" alt="headermain">
+
+        <div> Wie sich hier erkennen lässt, nutzen wir die generische Komponente HeaderBase als Rahmen und fügen zwei weitere Komponenten, namens SearchBar und MenuBase, in die HeaderBase-Komponente ein. Somit erzugen wir die HeaderMain-Komponente in dem wir drei einzelne Komponenten miteinander vereinen. Dabei lässt sich auch ein Vorteil erkennen, denn wir separieren den Code und die Funktionen der einzlnen Komponenten von einander und führen sie in einer weiteren Komponenten nur durch ihren Aufruf zusammen. Somit können wir hier von <em>Clean-Code</em> sprechen, denn wir schaffen nachvollziehbaren Code, der voneinander getrennt ist und durch die klare Namensgebung weiß man, wo man die Funktionen für die einzelnen Bestandteile findet. Falls man also eine Veränderung an der Suchleiste vornehmen möchte, weiß man direkt, dass die Anlaufstelle die <em>SearchBar.tsx</em>-Datei ist. </div>
+
+        <h4> Routing </h4>
+
+        <div> Schauen wir uns nun das Routing von der SPA an und wie die verschiedenen Inhalte geladen werden könnnen. Dazu müssen wir ein Blick auf die folgenden Dateien werfen: </div>
+
+        <div>
+            <ul>
+                <li> <em> Router.tsx </em> </li>
+                <li> <em> App.tsx </em> </li>
+                <li> <em> index.tsx </em> </li>
+                <li> <em> index.html </em> </li>
+            </ul>
+        </div>
+
+        <div> Beginnen wir nun also auch in dieser Reihenfolge und betrachten zunächst die <em>Router.tsx</em>-Datei: </div>
+
+        <img class="img-center" src="Assets/Graphics/Feedgram/router.png" alt="router">
+
+        <div> Dabei importieren wir zunächst wieder all unsere benötigten Seiten und Komponenten. Auf den Authenzifizerungsprozess werde ich dabei später nochmal genauer eingehen. Zunächst legen wir fest, was eine geschützte Route ist und was keine geschützte Route ist. Somit separieren wir die Seiten in Seiten, die nur als angemeldeter Nutzer zugänglich sind, und in Seiten, wie Login, Registrierung und Passwort-Zurücksetzen, die ohne angemeldeten Nutzer zugänglich sein sollten. Im Return-Statement legen wir dann fest, welche Seite bei welchem URL-Path aufgerufen werden soll. Somit wird bei <em>/feed</em> zum Beispiel die Feed-Seite der App geladen, wenn ein Nutzer angemeldet ist. </div>
+
+        <img class="img-center" src="Assets/Graphics/Feedgram/app.png" alt="app">
+
+        <div> Die <em>App.tsx</em>-Datei, die mit dem Erstellen des Projektes geliefert wird gibt dann im Return-Statement den Router zurück. </div>
+
+        <img class="img-center" src="Assets/Graphics/Feedgram/indextsx.png" alt="indextsx">
+
+        <div> Das gleich funktioniert bei der <em>index.tsx</em>-Datei diese gibt dann innerhlab des BrowserRouters, der aus dem React-Router-DOM Package stammt, die <em>App.tsx</em> zurück, welche den <em>Router</em> beinhaltet. </div>
+
+        <img class="img-center" src="Assets/Graphics/Feedgram/indexhtml.png" alt="indexhtml">
+
+        <div> Die HTML-Datei enthält im Body ein <em>div</em> mit der ID <em>root</em>. Wie die <em>index.tsx</em>-Datei zeigt sucht die durch den Aufruf <em>document.getElementByID('root')</em> nach der ID, die das div hat. Somit können durch die Definition des Routings in <em>Router.tsx</em> die jeweiligen Seiten über die <em>App.tsx</em> und <em>index.tsx</em> in das HTML-DIV in <em>index.html</em> geladen werden, sodass je nach Nutzer-Aktion immer zur richtigen Seite navigiert und der richtige Inhalt gezeigt wird. </div>
+
+        <h4> Login & Registrierung via Firebase</h4>
+
+        <div> Um Firebase mit React nutzen zu können, müssen wie bereits erwähnt das Package und die Dependencies in das Projekt via NPM geladen werden. Nachdem dieser Schritt abgeschlossen ist, muss ein neues Projekt in Firebase angelegt werden und dann kann dieses in die React-App eingebunden werden. Das Erstellen einer Firebasedatenbank für eine Webanwendungen ist dabei sehr intuitiv, weshalb ich darauf nicht genauer eingehen werde. Viel bedeutender ist es, dass Firebase über einen ApiKey, eine AuthDomain und verschiedene IDs die Verbindung zur Webanwendung ermöglicht. Diese Informationen müssen der Anwendung bekannt sein, damit sie die richtige Firebasedatenbank findet. Der Code für Feedgram sieht dabei so aus: </div>
+
+        <img class="img-center" src="Assets/Graphics/Feedgram/firebasets.png" alt="firebasets">
+
+        <div> Die Datei <em>firebase.ts</em> gibt in der <em>const firebaseConfig</em> die genannten Informationen mit, damit die Datenbank eindeutig indentifiziert werden kann. Daraufhin wird sie initialisiert und stellt somit die Authentication und das Speichern der Beiträge von verschiedenen Nutzer, damit diese später im Feed angezeigt werden, bereit. Folglich werden weitere Funktionen definiert, die das Login und die Registrierung mit Email oder Google-Account, das Passwort-Zurücksetzen und das Ausloggen ermöglichen. Um diese Funktionen zu verwenden werden sie dann ein Element, zum Beispiel einen Login Button, zugewiesen, das die Funktion aufruft und somit ein Login zulässt oder verweigert:  </div>
+
+        <img class="img-center" src="Assets/Graphics/Feedgram/logintsx.png" alt="logintsx">
+
+        <div> In <em>login.tsx</em> wird die Funktion <em>loginWithEmailAndPassword</em> in Zeile 30 an die initialisierte Funktion <em>loginWithEmail</em> übergeben, die durch den Button, siehe Zeile 54, aufgerufen wird. Diese setzt <em>HasError</em> auf <em>false</em> und springt dann in die <em>loginWithEmailAndPassword</em>-Funktion und überprüft, ob ein Nutzer mit den angegebenen Daten in der Datenbank hinterlegt ist. Falls dies der Fall ist, wird der Nutzer angemeldet und gelangt zum Feed, falls dies jedoch nicht der Fall ist und die eingegebenen Informationen falsch sind, wird <em>HasError</em> durch <em>catch(e => setHasError(true))</em> auf <em>true</em> gesetzt, somit wird der Nutzer nicht angemeldet und die Error-Message in Zeile 62 wird angezeigt. </div>
+       
+        <h3> Die fertige Webanwendungen</h3>
+
+        <div> Nun zur fertige Applikation. Wie sieht die Anwendung nun konkret aus? Dazu folgen nur ein paar Bilder des User-Interfaces. Falls Fragen zur Umsetzung oder Funktionalität bestehen wenden Sie sich an <a href="mailto:tombaier27@icloud.com">Tom Baier</a> oder besuchen Sie mein <a href=" https://github.com/tombaier/my-own-app">Github</a>. </div>
+
+        <img class="img-center" src="Assets/Graphics/Feedgram/ui1.png" alt="ui1">
+
+        <img class="img-center" src="Assets/Graphics/Feedgram/ui2.png" alt="ui2">
 
     </body>
 </html>
