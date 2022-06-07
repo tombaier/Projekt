@@ -9,32 +9,35 @@ body {
 h2 {
     color: #e17055;
 	font-size: 4vw;
-    margin-left: 300px;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 h3 {
     color: #e17055;
 	font-size: 2vw;
-    margin-left: 300px;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 h4 {
     color: #e17055;
 	font-size: 1.5vw;
-    margin-left: 300px;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 h5 {
     color: #000000;
 	font-size: 1vw;
-    margin-left: 300px;
-    margin-right: 300px;
+    margin-left: 200px;
+    margin-right: 200px;
     text-align: justify;
 }
 
 div {
-    margin-left: 300px;
-    margin-right: 300px;
+    margin-left: 200px;
+    margin-right: 200px;
     text-align: justify;
 }
 
